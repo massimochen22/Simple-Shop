@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-I don't know what I should say here
-=======
-Some messages.
-dasj
-asdasdkl
->>>>>>> ba49c5ea22f3f92a1c9024159ea90a8b0875d03e
