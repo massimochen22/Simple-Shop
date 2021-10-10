@@ -24,6 +24,7 @@ function se($v, $k = null, $default = "", $isEcho = true) {
         //https://www.php.net/manual/en/function.htmlspecialchars.php
         return htmlspecialchars($returnValue, ENT_QUOTES);
     }
+    
 }
 //TODO 2: filter helpers
 function sanitize_email($email = "") {

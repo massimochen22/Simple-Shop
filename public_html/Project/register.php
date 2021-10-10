@@ -32,6 +32,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
     $confirm = se($_POST, "confirm", "", false);
     //TODO 3
 
+    
 
     $errors = [];
     if (empty($email)) {
