@@ -1,5 +1,14 @@
-<canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
+<html>
+    <canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
+</html>
+<style>
+    #canvas {
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+}
 
+</style>
 <script>
     // Arcade Shooter game
 
@@ -28,8 +37,6 @@ var ship = makeSquare(50, canvas.height / 2 - 25, 50, 5);
 var up = false;
 var down = false;
 var space = false;
-var right = false;
-var left= false;
 
 // Is a bullet already on the canvas?
 var shooting = false;
@@ -38,7 +45,6 @@ var bullet = makeSquare(0, 0, 10, 10);
 
 // An array for enemies (in case there are more than one)
 var enemies = [];
-var food = [];
 
 // Add an enemy object to the array
 var enemyBaseSpeed = 2;
@@ -48,15 +54,6 @@ function makeEnemy() {
   var enemyY = Math.round(Math.random() * (canvas.height - enemySize * 2)) + enemySize;
   var enemySpeed = Math.round(Math.random() * enemyBaseSpeed) + enemyBaseSpeed;
   enemies.push(makeSquare(enemyX, enemyY, enemySize, enemySpeed));
-}
-
-
-function makeFood() {
-  var foodX = canvas.width;
-  var foodSize = Math.round((Math.random() * 15)) + 15;
-  var foodY = Math.round(Math.random() * (canvas.height - foodSize * 2)) + foodSize;
-  var foodSpeed = 6;
-  food.push(makeSquare(foodX, foodY, foodSize, foodSpeed));
 }
 
 // Check if number a is in the range b to c (exclusive)
@@ -101,12 +98,8 @@ function menu() {
 function startGame() {
 	// Kick off the enemy spawn interval
   timeoutId = setInterval(makeEnemy, timeBetweenEnemies);
-  // Kick off the food spawn interval
-  timeoutId = setInterval(makeFood, 20000);
   // Make the first enemy
   setTimeout(makeEnemy, 1000);
-  // Make the first enemy
-  setTimeout(makeFood, 2000);
   // Kick off the draw loop
   draw();
   // Stop listening for click events
@@ -123,9 +116,6 @@ function endGame() {
   context.font = '24px Arial';
   context.textAlign = 'center';
   context.fillText('Game Over. Final Score: ' + score, canvas.width / 2, canvas.height / 2);
-  context.font = '18px Arial';
-  // context.fillText('Click to restart', canvas.width / 2, canvas.height / 1.5);
-  // canvas.addEventListener('click',menu);
 }
 
 // Listen for keydown events
@@ -137,16 +127,8 @@ canvas.addEventListener('keydown', function(event) {
   if (event.keyCode === 40) { // DOWN
     down = true;
   }
-
-  if (event.keyCode === 37) { // LEFT
-    left = true;
-  }
-  if (event.keyCode === 39) { // RIGHT
-    right = true;
-  }
   if (event.keyCode === 32) { // SPACE
     shoot();
-
   }
 });
 
@@ -159,13 +141,6 @@ canvas.addEventListener('keyup', function(event) {
   if (event.keyCode === 40) { // DOWN
     down = false;
   }
-  if (event.keyCode === 37) { // LEFT
-    left = false;
-  }
-  if (event.keyCode === 39) { // RIGHT
-    right = false;
-  }
-
 });
 
 // Clear the canvas
@@ -196,36 +171,12 @@ function draw() {
     context.fillStyle = '#00FF00';
     enemy.draw();
   });
-
-  // Move and draw the food
-  food.forEach(function(food) {
-    food.x -= food.s;
-    context.fillStyle = '#FFFF00';
-    food.draw();
-  });
-
   // Collide the ship with enemies
   enemies.forEach(function(enemy, i) {
     if (isColliding(enemy, ship)) {
       gameOver = true;
     }
   });
-
-
-  food.forEach(function(food, i) {
-
-    if (isColliding(food, ship)) {
-      food.x = -100;
-      food.y = -100;
-      score = score +5;
-
-
-    }
-  });
-
-  
-  
-
   // Move the ship
   if (down) {
     ship.y += ship.s;
@@ -233,15 +184,6 @@ function draw() {
   if (up) {
     ship.y -= ship.s;
   }
-
-  if (left) {
-    ship.x -= ship.s;
-  }
-
-  if (right) {
-    ship.x += ship.s;
-  }
-
   // Don't go out of bounds
   if (ship.y < 0) {
     ship.y = 0;
@@ -249,15 +191,6 @@ function draw() {
   if (ship.y > canvas.height - ship.l) {
     ship.y = canvas.height - ship.l;
   }
-
-  if (ship.x < 0) {
-    ship.x = 0;
-  }
-
-  if (ship.x > canvas.width - ship.l) {
-    ship.x = canvas.width- ship.l;
-  }
-
   // Draw the ship
   context.fillStyle = '#FF0000';
   ship.draw();
@@ -281,7 +214,6 @@ function draw() {
         }
       }
     });
-    
     // Collide with the wall
     if (bullet.x > canvas.width) {
       shooting = false;
@@ -290,7 +222,6 @@ function draw() {
     context.fillStyle = '#0000FF';
     bullet.draw();
   }
-
   // Draw the score
   context.fillStyle = '#000000';
   context.font = '24px Arial';
@@ -299,7 +230,6 @@ function draw() {
   // End or continue the game
   if (gameOver) {
     endGame();
-    
   } else {
     window.requestAnimationFrame(draw);
   }
@@ -308,13 +238,5 @@ function draw() {
 // Start the game
 menu();
 canvas.focus();
-</script>
-<style>
-    #canvas {
-    width: 600px;
-    height: 400px;
-    border: 1px solid black;
-  }
-</style>
 
-  
+</script>
