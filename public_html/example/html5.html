@@ -55,7 +55,7 @@ function makeFood() {
   var foodX = canvas.width;
   var foodSize = Math.round((Math.random() * 15)) + 15;
   var foodY = Math.round(Math.random() * (canvas.height - foodSize * 2)) + foodSize;
-  var foodSpeed = 10;
+  var foodSpeed = 6;
   food.push(makeSquare(foodX, foodY, foodSize, foodSpeed));
 }
 
@@ -85,18 +85,14 @@ var timeoutId = null;
 // Show the game menu and instructions
 function menu() {
   erase();
-  context.fillStyle = 'Red';
-  context.font = 'Bold 36px Arial';
+  context.fillStyle = '#000000';
+  context.font = '36px Arial';
   context.textAlign = 'center';
   context.fillText('Shoot \'Em!', canvas.width / 2, canvas.height / 4);
   context.font = '24px Arial';
-  context.fillStyle = 'green';
   context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
   context.font = '18px Arial';
-  context.fillStyle = 'blue';
-  context.fillText('Up/Down/Right/Left to move, Space to shoot.', canvas.width / 2, (canvas.height / 4) * 3);
-  context.fillText('If you touch the yellow square you get +10 points', canvas.width / 2, (canvas.height *0.8));
-
+  context.fillText('Up/Down to move, Space to shoot.', canvas.width / 2, (canvas.height / 4) * 3);
   // Start the game on a click
   canvas.addEventListener('click', startGame);
 }
@@ -221,8 +217,8 @@ function draw() {
     if (isColliding(food, ship)) {
       food.x = -100;
       food.y = -100;
-      score = score +10;
-      console.log(food);
+      score = score +5;
+
 
     }
   });
