@@ -113,9 +113,9 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     }
 }
 
-if(!empty($_GET['status'])){
-    flash("You have been logged out!");
-}
+// if(!empty($_GET['status'])){
+//     flash("You have been logged out!");
+// }
 ?>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
