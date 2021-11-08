@@ -13,17 +13,7 @@
 .alert-info {
     background-color: rgb(186, 255, 255);
 }
-
-nav {
-    text-align: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 15px;
-}
-
-nav li{
-    display: inline; 
-    background-color: #e2b9af;
-}
+nav li{display: inline; background-color: #e2b9af;}
 nav li a{
     color: rgb(0, 0, 0)
     
@@ -32,53 +22,9 @@ nav li a:hover {
     background-color: rgb(255, 255, 255);
 }
 
-/* input{border-radius: 5%;} */
+input{border-radius: 5%;}
 body{
-    text-align: center;
     background-color: antiquewhite;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 15px;
 
 
-}
-
-
-input[type=button], input[type=submit], input[type=reset] {
-    border: none;
-
-	background: #FF8500;
-	color: #fff;
-	box-shadow: 1px 1px 4px #DADADA;
-	-moz-box-shadow: 1px 1px 4px #DADADA;
-	-webkit-box-shadow: 1px 1px 4px #DADADA;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    padding: 8px 15px 8px 15px;
-
-
-  }
-
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
-    background: #EA7B00;
-    color: #fff;
-    
-  }
-
-input[type="text"],input[type="email"],input[type="password"],input[type="url"] {
-  font-family: Georgia, "Times New Roman", Times, serif;
-    border: none;
-    
-	border-radius: 4px;
-	font-size: 15px;
-	margin: 0;
-	outline: 0;
-	padding: 10px;
-	width: 20%;
-	box-sizing: border-box; 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box; 
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
 }
