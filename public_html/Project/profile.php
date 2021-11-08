@@ -31,38 +31,43 @@ if (isset($_POST["save"])) {
         flash("An unexpected error occurred, please try again", "danger");
         //echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
     }
-
+ 
 
     //check/update password
     $current_password = se($_POST, "currentPassword", null, false);
     $new_password = se($_POST, "newPassword", null, false);
     $confirm_password = se($_POST, "confirmPassword", null, false);
     if (!empty($current_password) && !empty($new_password) && !empty($confirm_password)) {
-        if ($new_password === $confirm_password) {
-            //TODO validate current
-            $stmt = $db->prepare("SELECT password from Users where id = :id");
-            try {
-                $stmt->execute([":id" => get_user_id()]);
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                if (isset($result["password"])) {
-                    if (password_verify($current_password, $result["password"])) {
-                        $query = "UPDATE Users set password = :password where id = :id";
-                        $stmt = $db->prepare($query);
-                        $stmt->execute([
-                            ":id" => get_user_id(),
-                            ":password" => password_hash($new_password, PASSWORD_BCRYPT)
-                        ]);
+        if (strlen($new_password) < 8){
+            flash("The new password is too short");
+        }
+        else{
+            if ($new_password === $confirm_password) {
+                //TODO validate current
+                $stmt = $db->prepare("SELECT password from Users where id = :id");
+                try {
+                    $stmt->execute([":id" => get_user_id()]);
+                    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if (isset($result["password"])) {
+                        if (password_verify($current_password, $result["password"])) {
+                            $query = "UPDATE Users set password = :password where id = :id";
+                            $stmt = $db->prepare($query);
+                            $stmt->execute([
+                                ":id" => get_user_id(),
+                                ":password" => password_hash($new_password, PASSWORD_BCRYPT)
+                            ]);
 
-                        flash("Password reset", "success");
-                    } else {
-                        flash("Current password is invalid", "warning");
+                            flash("Password reset", "success");
+                        } else {
+                            flash("Current password is invalid", "warning");
+                        }
                     }
+                } catch (Exception $e) {
+                    echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
                 }
-            } catch (Exception $e) {
-                echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
+            } else {
+                flash("New passwords don't match", "warning");
             }
-        } else {
-            flash("New passwords don't match", "warning");
         }
     }
 }
@@ -82,7 +87,8 @@ $username = get_username();
         <input type="text" name="username" id="username" value="<?php se($username); ?>" />
     </div>
     <!-- DO NOT PRELOAD PASSWORD -->
-    <div>Password Reset</div>
+    <div style="text-decoration: underline;">Password Reset</div>
+    <br>
     <div class="mb-3">
         <label for="cp">Current Password</label>
         <input type="password" name="currentPassword" id="cp" />

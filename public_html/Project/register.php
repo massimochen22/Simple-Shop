@@ -2,33 +2,6 @@
 require(__DIR__ . "/../../partials/nav.php");
 reset_session();
 ?>
-<form onsubmit="return validate(this)" method="POST">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" required />
-    </div>
-    <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" required maxlength="30" />
-    </div>
-    <div>
-        <label for="pw">Password</label>
-        <input type="password" id="pw" name="password" required minlength="8" />
-    </div>
-    <div>
-        <label for="confirm">Confirm</label>
-        <input type="password" name="confirm" required minlength="8" />
-    </div>
-    <input type="submit" value="Register" />
-</form>
-<script>
-    function validate(form) {
-        //TODO 1: implement JavaScript validation
-        //ensure it returns false for an error and true for success
-
-        return true;
-    }
-</script>
 <?php
 //TODO 2: add PHP Code
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"])) {
@@ -90,7 +63,64 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
         }
     }
 }
+else{
+    $email = "";
+    $username = "";
+}
 ?>
+<?php
+
+?>
+<form onsubmit="return validate(this)" method="POST">
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="<?php echo $email; ?>" />
+    </div>
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" value="<?php echo $username; ?>" />
+    </div>
+    <div>
+        <label for="pw">Password</label>
+        <input type="password" id="pw" name="password" required minlength="8" />
+    </div>
+    <div>
+        <label for="confirm">Confirm</label>
+        <input type="password" name="confirm" required minlength="8" />
+    </div>
+    <input type="submit" value="Register" />
+</form>
+<script>
+    function validate(form) {
+        let pw = form.newPassword.value;
+        let con = form.confirmPassword.value;
+        let isValid = true;
+        //TODO add other client side validation....
+
+        //example of using flash via javascript
+        //find the flash container, create a new element, appendChild
+        if (pw !== con) {
+            //find the container
+            /*let flash = document.getElementById("flash");
+            //create a div (or whatever wrapper we want)
+            let outerDiv = document.createElement("div");
+            outerDiv.className = "row justify-content-center";
+            let innerDiv = document.createElement("div");
+            //apply the CSS (these are bootstrap classes which we'll learn later)
+            innerDiv.className = "alert alert-warning";
+            //set the content
+            innerDiv.innerText = "Password and Confirm password must match";
+            outerDiv.appendChild(innerDiv);
+            //add the element to the DOM (if we don't it merely exists in memory)
+            flash.appendChild(outerDiv);*/
+            flash("Password and Confirm password must match", "warning");
+            isValid = false;
+        }
+        return isValid;
+    }
+</script>
+
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
+
