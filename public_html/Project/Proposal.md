@@ -84,7 +84,12 @@
     - Pull Requests
       - https://github.com/massimochen22/IT202-001/pull/42
     - Screenshots
-      - Refer to the previous screenshot.
+      - ![Screen Shot 2021-11-08 at 3 04 57 PM](https://user-images.githubusercontent.com/89932323/140810579-59e0665d-bb88-4fc0-ae77-63d6911c7603.png)![Screen Shot 2021-11-08 at 3 05 00 PM](https://user-images.githubusercontent.com/89932323/140810581-a904a161-f803-44d3-90d6-70a8179d2fe7.png)![Screen Shot 2021-11-08 at 3 05 03 PM](https://user-images.githubusercontent.com/89932323/140810583-fc8a05ac-368e-4506-af78-d8d16dbb4d36.png)![Screen Shot 2021-11-08 at 3 05 06 PM](https://user-images.githubusercontent.com/89932323/140810584-6af4f285-9fa9-498c-9727-bf3c18229cd9.png)
+         - With these 4 screenshots I can show that with the admin account I can assign roles, create roles, and see the roles
+      -  ![Screen Shot 2021-11-08 at 3 10 12 PM](https://user-images.githubusercontent.com/89932323/140810948-12b0e487-8d35-4440-a3e4-63228b76af3b.png)
+          -   Here attached also the roles table
+
+
 
 - [x] \(11/08/2021 of completion) Site should have basic styles/theme applied; everything should be styled
   -  List of Evidence of Feature Completion
