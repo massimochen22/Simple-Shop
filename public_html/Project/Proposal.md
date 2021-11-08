@@ -30,8 +30,10 @@
     - Pull Requests
       - https://github.com/massimochen22/IT202-001/pull/26 (this had the first version of register)
       - https://github.com/massimochen22/IT202-001/pull/40 (this has the final version of the register)
+       - https://github.com/massimochen22/IT202-001/pull/53 (this is the final version of the register.php, I added the password  validation part. Password has to have at least lenght of 8 characters)
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+      - ![Screen Shot 2021-11-08 at 1 59 46 PM](https://user-images.githubusercontent.com/89932323/140802169-68ccc408-72a6-4995-9a22-518a85ebc46b.png)
+
         - Screenshot #1 description explaining what you're trying to show
 
 - [x] \(10/25/2021) User will be able to login to their account (given they enter the correct credentials)
