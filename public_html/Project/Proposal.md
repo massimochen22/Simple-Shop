@@ -23,55 +23,58 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-- [ ] \(mm/dd/yyyy of completion) User will be able to register a new account
+- [x] \(10/25/2021) User will be able to register a new account
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed 
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/register.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/26 (this had the first version of register)
+      - https://github.com/massimochen22/IT202-001/pull/40 (this has the final version of the register)
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
+- [x] \(10/25/2021) User will be able to login to their account (given they enter the correct credentials)
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/login.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      -  https://github.com/massimochen22/IT202-001/pull/26 
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to logout
+- [x] \(10/25/2021)  User will be able to logout
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/logout.php
+      -  https://github.com/massimochen22/IT202-001/pull/26 (this had the first version of logout)
+      -  https://github.com/massimochen22/IT202-001/pull/40 (this has the final version of logout)
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Basic security rules implemented
+- [x] \(10/25/2021)  Basic security rules implemented
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/home.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      -  https://github.com/massimochen22/IT202-001/pull/40 
+      -  https://github.com/massimochen22/IT202-001/pull/41 
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Basic Roles implemented
+- [x] \(11/01/2021) Basic Roles implemented
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/list_roles.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/42
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
+
 - [ ] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
   -  List of Evidence of Feature Completion
     - Status: Pending (Completed, Partially working, Incomplete, Pending)
@@ -82,32 +85,33 @@
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Any output messages/errors should be “user friendly”
+- [x] \(10/13/2021) Any output messages/errors should be “user friendly”
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/logout.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/28
+      - https://github.com/massimochen22/IT202-001/pull/39
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to see their profile
+- [x] \(10/25/2021)  User will be able to see their profile
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/profile.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      -  https://github.com/massimochen22/IT202-001/pull/40 
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to edit their profile
+- [x] \(10/25/2021)  User will be able to edit their profile
   -  List of Evidence of Feature Completion
     - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/profile.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      -  https://github.com/massimochen22/IT202-001/pull/40 
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
