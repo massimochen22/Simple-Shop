@@ -113,13 +113,14 @@ function users_check_duplicate($errorInfo)
             flash("The chosen " . $matches[1] . " is not available.", "warning");
         } else {
             //TODO come up with a nice error message
-            flash("<pre>" . var_export($errorInfo, true) . "</pre>");
+            //flash("<pre>" . var_export($errorInfo, true) . "</pre>");
         }
     } else {
         //TODO come up with a nice error message
-        flash("<pre>" . var_export($errorInfo, true) . "</pre>");
+        //flash("<pre>" . var_export($errorInfo, true) . "</pre>");
     }
 }
+
 function get_url($dest)
 {
     global $BASE_PATH;

@@ -21,7 +21,11 @@ require(__DIR__ . "/../../partials/nav.php"); ?>
 </script>
 <?php
 //TODO 2: add PHP Code
+
+
+
 if (isset($_POST["email"]) && isset($_POST["password"])) {
+
     //get the email key from $_POST, default to "" if not set, and return the value
     $email = se($_POST, "email", "", false);
     //same as above but for password
@@ -99,7 +103,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                     }
                 } else {
                     //echo "Invalid email";
-                    flash("Email not found", "danger");
+                    flash("Email/Username not found", "danger");
                 }
             }
         } catch (Exception $e) {
@@ -107,6 +111,10 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
             flash(var_export($e, true));
         }
     }
+}
+
+if(!empty($_GET['status'])){
+    flash("You have been logged out!");
 }
 ?>
 <?php
