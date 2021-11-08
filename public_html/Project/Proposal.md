@@ -29,10 +29,19 @@
     - Direct Link: https://hc424-prod.herokuapp.com/Project/register.php
     - Pull Requests
       - https://github.com/massimochen22/IT202-001/pull/26 (this had the first version of register)
-      - https://github.com/massimochen22/IT202-001/pull/40 (this has the final version of the register)
+      - https://github.com/massimochen22/IT202-001/pull/40 (this has the second version of the register)
+       - https://github.com/massimochen22/IT202-001/pull/53 (this is the final version of the register.php, I added the password  validation part. Password has to have at least lenght of 8 characters)
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-08 at 2 06 46 PM](https://user-images.githubusercontent.com/89932323/140802537-5458a44f-e386-49cc-b54d-f63400d400ed.png)![Screen Shot 2021-11-08 at 2 06 51 PM](https://user-images.githubusercontent.com/89932323/140802550-c2791174-e5c9-47ca-bcb9-aa761c10baaa.png)
+        - Before and after registering an account. The screenshot shows that I have input fields that are Username, email, password, confirm password. 
+      - ![Screen Shot 2021-11-08 at 2 10 43 PM](https://user-images.githubusercontent.com/89932323/140803233-1c4fb2b7-5b51-4b3a-b89e-7fa754a0b0bc.png)![Screen Shot 2021-11-08 at 2 12 04 PM](https://user-images.githubusercontent.com/89932323/140803256-b1e7e229-875b-4727-99f9-8c84243cef6d.png)
+        - The two screenshots show that the program checks email and username availability
+      - ![Screen Shot 2021-11-08 at 2 15 00 PM](https://user-images.githubusercontent.com/89932323/140803740-c066eb4d-e74e-4e47-ac20-b4d36004a81f.png) ![Screen Shot 2021-11-08 at 2 15 04 PM](https://user-images.githubusercontent.com/89932323/140803771-7efb99fa-9308-4c2a-bad7-029677e991e4.png)![Screen Shot 2021-11-08 at 2 17 27 PM](https://user-images.githubusercontent.com/89932323/140803883-11d976a7-edd8-4ef0-8b5e-abaf85a75c2e.png)
+
+        -  The first two screenshots prove that at registration the password are checked if they are matching, and the third one checking if the password is at least 8 characters
+      -  ![Screen Shot 2021-11-08 at 2 21 39 PM](https://user-images.githubusercontent.com/89932323/140804509-572658b1-d625-49d3-bfd9-38a32a2a8cc9.png)
+         - Here I have the user table 
+
 
 - [x] \(10/25/2021) User will be able to login to their account (given they enter the correct credentials)
   -  List of Evidence of Feature Completion
@@ -41,8 +50,9 @@
     - Pull Requests
       -  https://github.com/massimochen22/IT202-001/pull/26 
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+       - ![Screen Shot 2021-11-08 at 2 23 49 PM](https://user-images.githubusercontent.com/89932323/140804841-13150635-1c60-4f70-b718-1231950878aa.png)
+      ![Screen Shot 2021-11-08 at 2 23 54 PM](https://user-images.githubusercontent.com/89932323/140804881-7b884896-395b-4b67-9153-6e354f64ce5c.png)
+          - Here I show that I can log in using the username Massimo.
 
 - [x] \(10/25/2021)  User will be able to logout
   -  List of Evidence of Feature Completion
@@ -50,9 +60,9 @@
     - Direct Link: https://hc424-prod.herokuapp.com/Project/logout.php
       -  https://github.com/massimochen22/IT202-001/pull/26 (this had the first version of logout)
       -  https://github.com/massimochen22/IT202-001/pull/40 (this has the final version of logout)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+    - Screenshot
+       -  ![Screen Shot 2021-11-08 at 2 27 36 PM](https://user-images.githubusercontent.com/89932323/140805328-77d676fe-7807-44a8-be2d-c8ded16b2156.png)
+          - Here I show that I can log out, and it will have a user friendly message .
 
 - [x] \(10/25/2021)  Basic security rules implemented
   -  List of Evidence of Feature Completion
@@ -62,8 +72,10 @@
       -  https://github.com/massimochen22/IT202-001/pull/40 
       -  https://github.com/massimochen22/IT202-001/pull/41 
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-08 at 2 30 02 PM](https://user-images.githubusercontent.com/89932323/140805762-63fc3e1a-f0d9-4439-9b9f-3ac888fec874.png) ![Screen Shot 2021-11-08 at 2 30 06 PM](https://user-images.githubusercontent.com/89932323/140805779-51b34c1b-b64c-4a42-a9f4-3256040edbda.png) 
+        - The two screenshot show that if you are logged out and you want to access a page such as home.php (which you would need to login in order to see), the webpage will give you the message warning you about it.
+       -  ![Screen Shot 2021-11-08 at 2 31 17 PM](https://user-images.githubusercontent.com/89932323/140806027-e329127a-134a-49d0-8144-16c63e3b6ed4.png)
+           - This is the User Role table
 
 - [x] \(11/01/2021) Basic Roles implemented
   -  List of Evidence of Feature Completion
@@ -72,18 +84,17 @@
     - Pull Requests
       - https://github.com/massimochen22/IT202-001/pull/42
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - Refer to the previous screenshot.
 
-- [ ] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
+- [x] \(11/08/2021 of completion) Site should have basic styles/theme applied; everything should be styled
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - https://hc424-prod.herokuapp.com/Project/admin/profile.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/40 (the first version of style.css)
+      - https://github.com/massimochen22/IT202-001/pull/53 (the final version of style.css)
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - The styling could be seen in each screenshot attached in this md file.
 
 - [x] \(10/13/2021) Any output messages/errors should be “user friendly”
   -  List of Evidence of Feature Completion
@@ -93,8 +104,7 @@
       - https://github.com/massimochen22/IT202-001/pull/28
       - https://github.com/massimochen22/IT202-001/pull/39
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - Refer to previous screenshots. They have the result of flash(). 
 
 - [x] \(10/25/2021)  User will be able to see their profile
   -  List of Evidence of Feature Completion
@@ -103,8 +113,8 @@
     - Pull Requests
       -  https://github.com/massimochen22/IT202-001/pull/40 
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-08 at 2 44 14 PM](https://user-images.githubusercontent.com/89932323/140807525-d2882d52-b5a3-4022-ac40-a17bf12f3af6.png)
+        - The screenshot shows the profile page. The user will see their username and email.
 
 - [x] \(10/25/2021)  User will be able to edit their profile
   -  List of Evidence of Feature Completion
@@ -113,8 +123,16 @@
     - Pull Requests
       -  https://github.com/massimochen22/IT202-001/pull/40 
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-08 at 2 47 00 PM](https://user-images.githubusercontent.com/89932323/140808052-5f75dedd-8233-4998-9585-0321d6437ad7.png) ![Screen Shot 2021-11-08 at 2 48 17 PM](https://user-images.githubusercontent.com/89932323/140808065-900d37a0-7299-4eb1-8ada-a0ac805ab010.png) ![Screen Shot 2021-11-08 at 2 51 02 PM](https://user-images.githubusercontent.com/89932323/140808344-92b0cf28-5d41-48ed-8a00-e22b617894f4.png)
+
+        - With these three screenshots I can shows that I can reset the password but doesn't let me change the email or username because they were already taken
+      - ![Screen Shot 2021-11-08 at 2 53 04 PM](https://user-images.githubusercontent.com/89932323/140808692-60c51ab7-921c-4d3f-9b47-f5d00052cade.png) ![Screen Shot 2021-11-08 at 2 53 17 PM](https://user-images.githubusercontent.com/89932323/140808749-cf2d3c68-abf8-435b-af0b-1bb91cd72e71.png) ![Screen Shot 2021-11-08 at 2 53 32 PM](https://user-images.githubusercontent.com/89932323/140808751-ce771db6-56a5-41d0-8372-500542e3723c.png)
+         -  I can change the fields if the the fields are not taken already
+      -  ![Screen Shot 2021-11-08 at 2 55 34 PM](https://user-images.githubusercontent.com/89932323/140808929-170631eb-ce0b-4a33-a32d-648bad78f86c.png)
+          -  It also checks if the password is too short if you want to reset the password
+
+
+
 
   
 - Milestone 2
