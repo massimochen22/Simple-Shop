@@ -2,7 +2,7 @@
 //note we need to go up 1 more directory
 require(__DIR__ . "/../../../partials/nav.php");
 
-if (!has_role("Admin")) {
+if (!has_role("Admin")&&!has_role("Owner")) {
     flash("You don't have permission to view this page", "warning");
     die(header("Location: $BASE_PATH" . "home.php"));
 }
@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
 $result = [];
 $columns = get_columns("Products");
 //echo "<pre>" . var_export($columns, true) . "</pre>";
-$ignore = ["id", "modified", "created"];
+$ignore = [ "modified", "created"];
 $db = getDB();
 //get the item
 $id = se($_GET, "id", -1, false);
