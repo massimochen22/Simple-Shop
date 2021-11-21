@@ -1,0 +1,2 @@
+ALTER TABLE Users ADD COLUMN balance int DEFAULT 0
+
