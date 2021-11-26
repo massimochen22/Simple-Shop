@@ -72,7 +72,7 @@ try {
                     <option value=<?php se($item2, "category");?>> <?php se($item2, "category");?> </option>
                 <?php endforeach; ?>
             </select>
-            <input class="form-control" type="search" name="itemName" placeholder="Name or Category" />
+            <input class="form-control" type="search" name="itemName" placeholder="Item Name" />
             <input class="btn btn-primary" type="submit" value="Search" />
         </div>
     </form>
