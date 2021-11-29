@@ -86,7 +86,6 @@ try {
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
     }
-
 ?>
 <div class="container-fluid">
     <h1>Shopping Cart</h1>
@@ -121,8 +120,8 @@ try {
                         ?>
                     </td>
                     <td>
-                        <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-                        <input type="number" id="quantity" name="quantity" min="0" max="10000">
+                        <form method="POST" id = "updateQuantity" class="row row-cols-lg-auto g-3 align-items-center">
+                        <input type="number" id="quantity" name="quantity" min="0" max="10000" required="required">
                         <input class="btn btn-primary" type="submit" name = "update" id = "update" value= "UPDATE" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($record, "item_id");?>>
                         </form>
