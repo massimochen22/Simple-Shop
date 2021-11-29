@@ -133,7 +133,7 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
                         <?php if (is_logged_in()):?>
                             <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
                                 <label for="quantity">Quantity :</label>
-                                <input type="number" id="quantity" name="quantity" min="0" max="<?php se($item, "stock"); ?>">
+                                <input type="number" id="quantity" name="quantity" min="0" max="<?php se($item, "stock"); ?>" required="required">
                                 <input class="btn btn-primary" name= "add" type="submit" value="Add to cart" />
                                 <input type="hidden" id="itid" name="itid" value= <?php se($item, "id");?>>
                                 <input type="hidden" id="itprice" name="itprice" value= <?php se($item, "unit_price");?>>
