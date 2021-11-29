@@ -1,0 +1,1 @@
+ALTER TABLE Products MODIFY unit_price float(2) NOT NULL
