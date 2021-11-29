@@ -22,6 +22,18 @@ if (($localWorks && $domain == "localhost") || $domain != "localhost") {
 session_start();
 require_once(__DIR__ . "/../lib/functions.php");
 
+
+if (!is_logged_in()){
+    $db = getDB();
+    $stmt = $db->prepare("TRUNCATE table Customer_Cart");
+    try {
+        $stmt->execute();
+    
+    } catch (PDOException $e) {
+        flash("<pre>" . var_export($e, true) . "</pre>");
+        }
+}
+
 ?>
 <!-- include css and js files -->
 <link rel="stylesheet" href="<?php echo get_url('style.css'); ?>">
@@ -32,6 +44,7 @@ require_once(__DIR__ . "/../lib/functions.php");
             <li><a href="<?php echo get_url('home.php'); ?>">Home</a></li>
             <li><a href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
             <li><a href="<?php echo get_url('shop.php'); ?>">Products</a></li>
+            <li><a href="<?php echo get_url('cart.php'); ?>">Shopping Cart</a></li>
         <?php endif; ?>
         <?php if (!is_logged_in()) : ?>
             <li><a href="<?php echo get_url('login.php'); ?>">Login</a></li>
