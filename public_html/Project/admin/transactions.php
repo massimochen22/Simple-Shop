@@ -56,7 +56,7 @@ try {
         <br>
         <hr>
         <div id="submit">
-            <form action="Home.php">        
+            <form action="/../Project/Home.php">        
                     <input class="btn btn-primary" name="Home" type="submit" value= "Back to Home"/>
             </form>
         </div>
