@@ -86,6 +86,15 @@ try {
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
     }
+
+// $db = getDB();
+// $stmt = $db->prepare("TRUNCATE table OrderItems");
+// try {
+//     $stmt->execute();
+
+// } catch (PDOException $e) {
+//     flash("<pre>" . var_export($e, true) . "</pre>");
+//     }
 ?>
 <div class="container-fluid">
     <h1>Shopping Cart</h1>
@@ -145,8 +154,12 @@ try {
         </table>
         <br>
         <div>
+            <form action="OrderConfirmation.php">        
+                <input class="btn btn-primary" name="Checkout" type="submit" value= "Check Out"/>
+            </form>
             <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-            <input class="btn btn-primary" name="clear" type="submit" value= "Clear Cart"/>
+                <input class="btn btn-primary" name="clear" type="submit" value= "Clear Cart"/>
+            </form>
         </div>
         <br>
         <div>TOTAL: <?php echo $total?>$</div>
