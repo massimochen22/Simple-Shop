@@ -42,9 +42,10 @@ if (!is_logged_in()){
     <ul>
         <?php if (is_logged_in()) : ?>
             <li><a href="<?php echo get_url('home.php'); ?>">Home</a></li>
-            <li><a href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
             <li><a href="<?php echo get_url('shop.php'); ?>">Products</a></li>
             <li><a href="<?php echo get_url('cart.php'); ?>">Shopping Cart</a></li>
+            <li><a href="<?php echo get_url('history.php'); ?>">Purchased</a></li>
+            <li><a href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
         <?php endif; ?>
         <?php if (!is_logged_in()) : ?>
             <li><a href="<?php echo get_url('login.php'); ?>">Login</a></li>
@@ -60,9 +61,6 @@ if (!is_logged_in()){
         <?php endif; ?>
         <?php if (is_logged_in()) : ?>
             <li><a href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
-            <span class="navbar-text show-balance">
-                Test Placeholder, should get replaced if balance works
-            </span>
         <?php endif; ?>
         
     </ul>
