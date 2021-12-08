@@ -138,10 +138,10 @@
 
   
 - Milestone 2
-- [ ] \(mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
+- [x] \(11/20/2021 of completion) User with an admin role or shop owner role will be able to add products to inventory
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status:Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/add_item.php
     - Pull Requests
       - PR link #1 (repeat as necessary)
     - Screenshots
@@ -151,27 +151,27 @@
 - [ ] \(mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page
   -  List of Evidence of Feature Completion
     - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Direct Link: 
     - Pull Requests
       - PR link #1 (repeat as necessary)
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
+- [x] \(11/20/2021 of completion) Admin/Shop owner will be able to see products with any visibility
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/list_item.php
     - Pull Requests
       - PR link #1 (repeat as necessary)
     - Screenshots
       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
+- [x] \(11/20/2021of completion) Admin/Shop owner will be able to edit any product
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/list_item.php
     - Pull Requests
       - PR link #1 (repeat as necessary)
     - Screenshots
