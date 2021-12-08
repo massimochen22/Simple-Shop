@@ -58,6 +58,7 @@ if (!is_logged_in()){
             <li><a href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign Roles</a></li>
             <li><a href="<?php echo get_url('admin/add_item.php'); ?>">Add Items</a></li>
             <li><a href="<?php echo get_url('admin/list_item.php'); ?>">List Items</a></li>
+            <li><a href="<?php echo get_url('admin/transactions.php'); ?>">Transactions</a></li>
         <?php endif; ?>
         <?php if (is_logged_in()) : ?>
             <li><a href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
