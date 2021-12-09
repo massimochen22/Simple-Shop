@@ -272,45 +272,67 @@
         - The two screenshots are showing before and after clicking clear cart
                
 - Milestone 3
-- [ ] \(mm/dd/yyyy of completion) User will be able to purchase items in their Cart
+- [x] \(12/07/2021) User will be able to purchase items in their Cart
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
+    -  Direct Link: https://hc424-prod.herokuapp.com/Project/OrderConfirmation.php?Checkout=Check+Out
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/109
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-08 at 6 23 22 PM](https://user-images.githubusercontent.com/89932323/145307276-008e6073-4ef7-4fcf-bc6f-4942a45e7252.png)
+        - From this picture you can see the checkout button in your cart page
+      -  ![Screen Shot 2021-12-08 at 6 23 28 PM](https://user-images.githubusercontent.com/89932323/145307340-0902ecea-88c6-4f7a-9ba4-805e545334c1.png)
+         -  From this screenshot we can see that the confirmation page has the form where users can input their information, and also the payment methods are listed there.
+      -  ![Screen Shot 2021-12-08 at 6 23 58 PM](https://user-images.githubusercontent.com/89932323/145307487-cd34f0b2-8d91-4e97-8f79-d676a9d92f7c.png)
+          - With this screenshot I show that in order to submit the form, the user has to write the correct total $
+      - ![Screen Shot 2021-12-08 at 6 40 17 PM](https://user-images.githubusercontent.com/89932323/145308511-98ee9196-354e-426e-98b5-708ae09bc27a.png)
+          - With this screenshot, you can see that when I checkout a larger amount of quantity than the total stock, I will be redirected to the cart page asking me to update the quantity.
+      - ![Screen Shot 2021-12-08 at 6 42 08 PM](https://user-images.githubusercontent.com/89932323/145308787-ff3c7198-bf4f-4757-8a28-c0e2d1b95e17.png)
+       ![Screen Shot 2021-12-08 at 6 42 45 PM](https://user-images.githubusercontent.com/89932323/145308796-6779998b-5608-437e-8fa8-884f83de27c7.png)
+       ![Screen Shot 2021-12-08 at 6 43 07 PM](https://user-images.githubusercontent.com/89932323/145308821-9bb16ac5-0d6b-4a2f-bdcc-111108768cd2.png)
+           -  With these three screenshots I show that my product table updates once I checkout the item.
 
-- [ ] \(mm/dd/yyyy of completion) Order Confirmation Page
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to see their Purchase History
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History
+
+
+
+- [x] \(12/07/2021) Order Confirmation Page
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/confirmationPage.php
+      - https://github.com/massimochen22/IT202-001/pull/111
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-08 at 6 47 19 PM](https://user-images.githubusercontent.com/89932323/145309148-ec6d667d-d78c-4134-a9c8-21eeca6bed89.png)
+        - This screenshot shows the thank you message and the details for my order.
+
+- [x] \(12/07/2021) User will be able to see their Purchase History
+  -  List of Evidence of Feature Completion
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/history.php
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/order_info.php?id=57
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/112
+    - Screenshots
+      - ![Screen Shot 2021-12-08 at 6 48 32 PM](https://user-images.githubusercontent.com/89932323/145309415-a75a3fa4-8584-4b39-8606-0bfed651166f.png)
+        - I show that the user can see the what he/she purchased
+      - ![Screen Shot 2021-12-08 at 6 51 26 PM](https://user-images.githubusercontent.com/89932323/145309812-151e69c1-3507-4d54-9297-af13dffb5ccb.png)
+        - when you click the order number it will bring you to a order info page with all the details about the order
+
+- [x] \(12/07/2021) Store Owner will be able to see all Purchase History
+  -  List of Evidence of Feature Completion
+    - Status:Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/transactions.php
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/order_info.php?id=56
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/113
+      - https://github.com/massimochen22/IT202-001/pull/117
+    - Screenshots
+      - ![Screen Shot 2021-12-08 at 6 57 55 PM](https://user-images.githubusercontent.com/89932323/145310109-3c3dfeb8-f187-4747-ada8-5ea14b68ff54.png)
+        - This is the page of all orders that only admins or store owner can see. 
+      - ![Screen Shot 2021-12-08 at 6 51 26 PM](https://user-images.githubusercontent.com/89932323/145310181-007eab23-d59b-41b4-9645-cbf9f5e17e8d.png)
+        - This is the detail page that you can access by clicking the order number. 
 - Milestone 4
 ### Intructions
 #### Don't delete this
