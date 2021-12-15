@@ -1,19 +1,52 @@
 <?php
 require_once(__DIR__ . "/../../partials/nav.php");
-is_logged_in(true);
+//is_logged_in(true);
+/**
+ * Logic:
+ * Check if query params have an id
+ * If so, use that id
+ * Else check logged in user id
+ * otherwise redirect away
+ */
+$user_id = se($_GET, "id", get_user_id(), false);
+error_log("user id $user_id");
+$isMe = $user_id === get_user_id();
+//!! makes the value into a true or false value regardless of the data https://stackoverflow.com/a/2127324
+$edit = !!se($_GET, "edit", false, false); //if key is present allow edit, otherwise no edit
+if ($user_id < 1) {
+    flash("Invalid user", "danger");
+    redirect("home.php");
+    //die(header("Location: home.php"));
+}
 ?>
 <?php
-if (isset($_POST["save"])) {
+//only allow profile updating if we're the user visiting this page and it's in edit mode
+if (isset($_POST["save"]) && $isMe && $edit) {
+    $db = getDB();
     $email = se($_POST, "email", null, false);
     $username = se($_POST, "username", null, false);
+    $visibility = !!se($_POST, "visibility", false, false) ? 1 : 0;
+    $hasError = false;
+    //sanitize
+    $email = sanitize_email($email);
+    //validate
+    if (!is_valid_email($email)) {
+        flash("Invalid email address", "danger");
+        $hasError = true;
+    }
+    if (!preg_match('/^[a-z0-9_-]{3,16}$/i', $username)) {
+        flash("Username must only be alphanumeric and can only contain - or _", "danger");
+        $hasError = true;
+    }
+    if (!$hasError) {
+        $params = [":email" => $email, ":username" => $username, ":id" => get_user_id(), ":vis" => $visibility];
 
-    $params = [":email" => $email, ":username" => $username, ":id" => get_user_id()];
-    $db = getDB();
-    $stmt = $db->prepare("UPDATE Users set email = :email, username = :username where id = :id");
-    try {
-        $stmt->execute($params);
-    } catch (Exception $e) {
-        users_check_duplicate($e->errorInfo);
+        $stmt = $db->prepare("UPDATE Users set email = :email, username = :username, visibility = :vis where id = :id");
+        try {
+            $stmt->execute($params);
+        } catch (Exception $e) {
+            users_check_duplicate($e->errorInfo);
+        }
     }
     //select fresh data from table
     $stmt = $db->prepare("SELECT id, email, IFNULL(username, email) as `username` from Users where id = :id LIMIT 1");
@@ -31,79 +64,122 @@ if (isset($_POST["save"])) {
         flash("An unexpected error occurred, please try again", "danger");
         //echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
     }
- 
+
 
     //check/update password
     $current_password = se($_POST, "currentPassword", null, false);
     $new_password = se($_POST, "newPassword", null, false);
     $confirm_password = se($_POST, "confirmPassword", null, false);
     if (!empty($current_password) && !empty($new_password) && !empty($confirm_password)) {
-        if (strlen($new_password) < 8){
-            flash("The new password is too short");
+        if (strlen($new_password) < 8) {
+            flash("New password must be at least 8 characters long", "danger");
+            return;
         }
-        else{
-            if ($new_password === $confirm_password) {
-                //TODO validate current
-                $stmt = $db->prepare("SELECT password from Users where id = :id");
-                try {
-                    $stmt->execute([":id" => get_user_id()]);
-                    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                    if (isset($result["password"])) {
-                        if (password_verify($current_password, $result["password"])) {
-                            $query = "UPDATE Users set password = :password where id = :id";
-                            $stmt = $db->prepare($query);
-                            $stmt->execute([
-                                ":id" => get_user_id(),
-                                ":password" => password_hash($new_password, PASSWORD_BCRYPT)
-                            ]);
+        if ($new_password === $confirm_password) {
+            //TODO validate current
+            $stmt = $db->prepare("SELECT password from Users where id = :id");
+            try {
+                $stmt->execute([":id" => get_user_id()]);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                if (isset($result["password"])) {
+                    if (password_verify($current_password, $result["password"])) {
+                        $query = "UPDATE Users set password = :password where id = :id";
+                        $stmt = $db->prepare($query);
+                        $stmt->execute([
+                            ":id" => get_user_id(),
+                            ":password" => password_hash($new_password, PASSWORD_BCRYPT)
+                        ]);
 
-                            flash("Password reset", "success");
-                        } else {
-                            flash("Current password is invalid", "warning");
-                        }
+                        flash("Password reset", "success");
+                    } else {
+                        flash("Current password is invalid", "warning");
                     }
-                } catch (Exception $e) {
-                    echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
                 }
-            } else {
-                flash("New passwords don't match", "warning");
+            } catch (Exception $e) {
+                echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
             }
+        } else {
+            flash("New passwords don't match", "warning");
         }
     }
 }
-?>
 
-<?php
 $email = get_user_email();
 $username = get_username();
+$created = "";
+$public = false;
+//$user_id = get_user_id(); //this is retrieved above now
+//TODO pull any other public info you want
+$db = getDB();
+$stmt = $db->prepare("SELECT username, created, visibility, email from Users where id = :id");
+try {
+    $stmt->execute([":id" => $user_id]);
+    $r = $stmt->fetch(PDO::FETCH_ASSOC);
+    error_log("user: " . var_export($r, true));
+    $username = se($r, "username", "", false);
+    $created = se($r, "created", "", false);
+    $public = se($r, "visibility", 0, false) > 0;
+    $us_email = se($r, "email", "", false);
+    if (!$public && !$isMe) {
+        flash("User's profile is private", "warning");
+        redirect("home.php");
+        //die(header("Location: home.php"));
+    }
+} catch (Exception $e) {
+    echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
+}
 ?>
-<form method="POST" onsubmit="return validate(this);">
-    <div class="mb-3">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="<?php se($email); ?>" />
-    </div>
-    <div class="mb-3">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="<?php se($username); ?>" />
-    </div>
-    <!-- DO NOT PRELOAD PASSWORD -->
-    <div style="text-decoration: underline;">Password Reset</div>
-    <br>
-    <div class="mb-3">
-        <label for="cp">Current Password</label>
-        <input type="password" name="currentPassword" id="cp" />
-    </div>
-    <div class="mb-3">
-        <label for="np">New Password</label>
-        <input type="password" name="newPassword" id="np" />
-    </div>
-    <div class="mb-3">
-        <label for="conp">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="conp" />
-    </div>
-    <input type="submit" value="Update Profile" name="save" />
-</form>
+<di class="container-fluid">
+    <h1>Profile</h1>
+    <?php if ($isMe) : ?>
+        <?php if ($edit) : ?>
+            <a class="btn btn-primary" href="?">View</a>
+        <?php else : ?>
+            <a class="btn btn-primary" href="?edit=true">Edit</a>
+        <?php endif; ?>
+    <?php endif; ?>
+    
+    <?php if (!$edit) : ?>
+        <div>Username: <?php se($username); ?></div>
+        <div>Joined: <?php se($created); ?></div>
+        <!-- TODO any other public info -->
+        <div>Email: <?php se($us_email); ?></div>
+    <?php endif; ?>
 
+    <?php if ($isMe && $edit) : ?>
+        <form method="POST" onsubmit="return validate(this);">
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input name="visibility" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" <?php if ($public) echo "checked"; ?>>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Make Profile Public</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" name="email" id="email" value="<?php se($email); ?>" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="username">Username</label>
+                <input class="form-control" type="text" name="username" id="username" value="<?php se($username); ?>" />
+            </div>
+            <!-- DO NOT PRELOAD PASSWORD -->
+            <div class="mb-3">Password Reset</div>
+            <div class="mb-3">
+                <label class="form-label" for="cp">Current Password</label>
+                <input class="form-control" type="password" name="currentPassword" id="cp" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="np">New Password</label>
+                <input class="form-control" type="password" name="newPassword" id="np" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="conp">Confirm Password</label>
+                <input class="form-control" type="password" name="confirmPassword" id="conp" />
+            </div>
+            <input type="submit" class="mt-3 btn btn-primary" value="Update Profile" name="save" />
+        </form>
+    <?php endif; ?>
+</div>
 <script>
     function validate(form) {
         let pw = form.newPassword.value;

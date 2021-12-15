@@ -11,7 +11,7 @@ if (!is_logged_in()) {
         flash("<pre>" . var_export($e, true) . "</pre>");
     }
 
-    die(header("Location: $BASE_PATH" . "home.php"));
+    die(redirect("$BASE_PATH" . "home.php"));
 }
 if (isset($_POST["remove"])){
     $item_id = se($_POST,"itid","",false);
