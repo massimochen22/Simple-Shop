@@ -5,6 +5,8 @@ require(__DIR__ . "/../../partials/nav.php");
 $id = se($_GET, "id", 0,false);
 $db = getDB();
 $stmt = $db->prepare("SELECT * FROM Products WHERE id = :id");
+$results2 = [];
+$avg = 0;
 try {
     $stmt->execute([":id"=> $id]);
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -16,6 +18,39 @@ try {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
 
+$db = getDB();
+$stmt = $db->prepare("SELECT * FROM Ratings join Users on Ratings.user_id = Users.id WHERE product_id = :id ORDER BY Ratings.created DESC LIMIT 10 ");
+// Products p join Customer_Cart o ON p.id = o.item_id
+try {
+    $stmt->execute([":id"=> $id]);
+    $r2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //echo "<pre>" . var_export($r, true) . "</pre>";
+    if ($r2) {
+        $results2 = $r2;
+    }
+} catch (PDOException $e) {
+    flash("<pre>" . var_export($e, true) . "</pre>");
+}
+
+$db = getDB();
+$stmt = $db->prepare("SELECT rating FROM Ratings WHERE product_id = :id ");
+try {
+    $stmt->execute([":id"=> $id]);
+    $r3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //echo "<pre>" . var_export($r, true) . "</pre>";
+    if ($r3) {
+        $results3 = $r3;
+        $count = count($results3);
+        $tot_ratings = 0;
+        foreach ($results3 as $item3){
+            $temp = (float) se($item3, "rating","",false);
+            $tot_ratings = $tot_ratings + $temp;
+        }
+        $avg = round(($tot_ratings/$count),3);
+    }
+} catch (PDOException $e) {
+    flash("<pre>" . var_export($e, true) . "</pre>");
+}
 
 
 if (isset($_POST["quantity"])&& isset($_POST["add"])){
@@ -63,21 +98,29 @@ if (isset($_POST["quantity"])&& isset($_POST["add"])){
     }
 }
 
+if (isset($_POST["comment"])&& isset($_POST["rate"])){
+    flash("Your review has been submitted!");
+    $item_id = se($_POST, "itid", "",false);
+    $user_id = get_user_id();
+    $rating = se($_POST, "rate", "",false);
+    $comment = se($_POST, "comment", "",false);
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO Ratings (product_id, user_id, rating, comment) VALUES (:product_id, :user_id, :rating, :comment)");
+    try {
+        $stmt->execute([ ":user_id"=>$user_id, ":product_id"=>$item_id, ":comment"=>$comment, ":rating"=>$rating]);
+        die(redirect("shop.php"));
+    } catch (PDOException $e) {
+        flash("<pre>" . var_export($e, true) . "</pre>");
+    }
+}
 
 ?>
 <?php foreach ($results as $item) : ?>
     <div class="col">
-        <div class="card bg-dark">
-            <div class="card-header">
-                Placeholder
-            </div>
+        <h2>Product Name: <?php se($item, "name"); ?></h2>
             <?php if (se($item, "image", "", false)) : ?>
                 <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
             <?php endif; ?>
-
-            <div class="card-body">
-                <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
-            </div>
             <div class="card-footer">
                 Description: <?php se($item, "description"); ?>
             </div>
@@ -90,14 +133,44 @@ if (isset($_POST["quantity"])&& isset($_POST["add"])){
                         <input class="btn btn-primary" name= "add" type="submit" value="Add to cart" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($item, "id");?>>
                         <input type="hidden" id="itprice" name="itprice" value= <?php se($item, "unit_price");?>>
-                        <!-- <input type="button" onclick="alert('Added to the Shopping Cart')" name="Add_cart" value="Add to Cart"> -->
-                        <!-- <button onclick="purchase('<?php se($item, 'id'); ?>','<?php se($item, 'unit_price'); ?>','<?php se($item, 'quantity'); ?>')" class="btn btn-primary">Add to Cart</button> -->
                     </form>
                 <?php endif; ?>
             </div>
+            <hr>
+            <div>
+                <h2>Rate this Product</h2>
+                <form method="POST" class="row row-cols-lg-auto g-3 align-items-center" >
+                    <label for="rate">Rating :</label>
+                    <input type="number" id="rate" name="rate" min="1" max= "5" required="required"><br>
+                    Comment:<br>
+                    <textarea name="comment" required></textarea><br>
+                    <input class="btn btn-primary" name= "enter" type="submit" value="Submit" />
+                    <input type="hidden" id="itid" name="itid" value= <?php se($item, "id");?>>
+                </form>
+            </div>
         </div>
 <?php endforeach; ?>
-
+<hr>
+<h2>Users Ratings</h2>
+<?php if ($results2) : ?>
+    <div class="card-footer">
+        Average Rating: <b><u><?php echo($avg); ?></u></b>
+    </div>
+        <?php foreach ($results2 as $item2) : ?>
+            <?php $curr_rating = (float) se($item2, "rating", "",false); ?>
+            <p class="card-footer">
+                Rated: <?php echo($curr_rating); ?> /5 | Wrote: " <?php se($item2, "comment"); ?>" | Date Posted :  <?php se($item2, "created"); ?> <br> by the user: 
+                <?php $user_id = se($item2, "user_id", 0, false);
+                $username = se($item2, "username", "", false);
+                include(__DIR__ . "/user_profile_link.php");?>
+                <br>
+            </p>
+        <?php endforeach; ?>
+        <div class="card-footer">
+        </div>
+<?php else : ?>
+    <p>No Reviews yet to show</p>
+<?php endif; ?>
 <?php
 require_once(__DIR__ . "/../../partials/footer.php");
 ?>

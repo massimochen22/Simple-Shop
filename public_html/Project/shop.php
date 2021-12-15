@@ -118,9 +118,6 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
             <?php foreach ($results as $item) : ?>
                 <div class="col">
                 <div class="card bg-dark">
-                    <div class="card-header">
-                        Placeholder
-                    </div>
                     <?php if (se($item, "image", "", false)) : ?>
                         <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
                     <?php endif; ?>

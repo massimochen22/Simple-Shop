@@ -140,8 +140,8 @@
 - Milestone 2
 - [x] \(11/20/2021) User with an admin role or shop owner role will be able to add products to inventory
   -  List of Evidence of Feature Completion
-    - Status:Completed
-    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/add_item.php
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
     - Pull Requests
       - https://github.com/massimochen22/IT202-001/pull/81
     - Screenshots
@@ -163,16 +163,16 @@
       - ![Screen Shot 2021-11-29 at 12 21 25 PM](https://user-images.githubusercontent.com/89932323/143913909-ef823a70-1a2b-49af-986c-24b23e7726b2.png)
         - shows the bar at the top that are used for sorting by category, partial match. In this example I searched the category of tech it also show that it will be sorted by price. In this screenshot is set as ascending order (price).
 
-
 - [x] \(11/20/2021) Admin/Shop owner will be able to see products with any visibility
   -  List of Evidence of Feature Completion
-    - Status: Completed
-    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/list_item.php
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
     - Pull Requests
       - https://github.com/massimochen22/IT202-001/pull/81
     - Screenshots
       - ![Screen Shot 2021-11-29 at 11 55 39 AM](https://user-images.githubusercontent.com/89932323/143910490-3da88e22-3682-413e-a807-a350d08db8d4.png)
         - With this screenshot I show that I have a page just for admins or shop owners to see products with any visibility. From the screenshot of the bullet point above (the product Table) we can see that the visibility of phone is -1 but it is still visible in this admin page.
+
 
 - [x] \(11/20/2021) Admin/Shop owner will be able to edit any product
   -  List of Evidence of Feature Completion
@@ -334,6 +334,75 @@
       - ![Screen Shot 2021-12-08 at 6 51 26 PM](https://user-images.githubusercontent.com/89932323/145310181-007eab23-d59b-41b4-9645-cbf9f5e17e8d.png)
         - This is the detail page that you can access by clicking the order number. 
 - Milestone 4
+- [ ] \(mm/dd/yyyy of completion)User can set their profile to be public or private (will need another column in Users table) 
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+
+- [ ] \(mm/dd/yyyy of completion)User will be able to rate a product they purchased
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+
+- [ ] \(mm/dd/yyyy of completion)User’s Purchase History Changes
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+
+- [ ] \(mm/dd/yyyy of completion)Store Owner Purchase History Changes
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+
+- [ ] \(mm/dd/yyyy of completion)Add pagination to Shop Page
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+
+- [ ] \(mm/dd/yyyy of completion)Store Owner will be able to see all products out of stock
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+
+- [ ] \(mm/dd/yyyy of completion)User can sort products by average rating on the Shop Page
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
 ### Intructions
 #### Don't delete this
 1. Pick one project type

@@ -45,7 +45,7 @@ if (isset($_POST["checkout"])){
                 }
             }
             if ($i != 0){
-                die(header('location: cart.php'));
+                die(redirect('cart.php'));
             }
         }
     } catch (PDOException $e) {
@@ -104,7 +104,7 @@ if (isset($_POST["checkout"])){
     }
     
     flash("Congratulations, your order has been submitted!", "success");
-    die(header('location: confirmationPage.php'));
+    die(redirect('confirmationPage.php'));
 }
 ?>
 
