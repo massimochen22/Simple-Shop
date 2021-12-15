@@ -138,157 +138,201 @@
 
   
 - Milestone 2
-- [ ] \(mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
+- [x] \(11/20/2021) User with an admin role or shop owner role will be able to add products to inventory
   -  List of Evidence of Feature Completion
     - Status: Pending (Completed, Partially working, Incomplete, Pending)
     - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/81
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 11 47 29 AM](https://user-images.githubusercontent.com/89932323/143909154-2e542c6a-41cc-4121-895f-ede88b7a0f59.png)
+        - This screenshot shows that I have an add item page for admins
+      - ![Screen Shot 2021-11-29 at 11 47 49 AM](https://user-images.githubusercontent.com/89932323/143909386-f335e8a7-7e1b-43b1-9526-38c72ad996c8.png)
+        -  This screenshot shows that I have a Product table in my server 
 
-- [ ] \(mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
+- [x] \(11/26/2021) Any user will be able to see products with visibility = true on the Shop page
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed 
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/shop.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/86
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 12 18 52 PM](https://user-images.githubusercontent.com/89932323/143913509-94829d2b-3567-4234-b13b-400d35669ea3.png)
+        - With this screenshot I show that the product page is visible without login
+      - ![Screen Shot 2021-11-29 at 12 21 25 PM](https://user-images.githubusercontent.com/89932323/143913909-ef823a70-1a2b-49af-986c-24b23e7726b2.png)
+        - shows the bar at the top that are used for sorting by category, partial match. In this example I searched the category of tech it also show that it will be sorted by price. In this screenshot is set as ascending order (price).
 
-- [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
+- [x] \(11/20/2021) Admin/Shop owner will be able to see products with any visibility
   -  List of Evidence of Feature Completion
     - Status: Pending (Completed, Partially working, Incomplete, Pending)
     - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/81
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 11 55 39 AM](https://user-images.githubusercontent.com/89932323/143910490-3da88e22-3682-413e-a807-a350d08db8d4.png)
+        - With this screenshot I show that I have a page just for admins or shop owners to see products with any visibility. From the screenshot of the bullet point above (the product Table) we can see that the visibility of phone is -1 but it is still visible in this admin page.
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
+
+- [x] \(11/20/2021) Admin/Shop owner will be able to edit any product
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/edit_item.php?id=1
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/81
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 12 01 51 PM](https://user-images.githubusercontent.com/89932323/143911035-0407769d-bee8-447e-a662-b121b1b1af97.png)
+        - from this screenshot we can see that the admin can modify the details of the specific product when clicking edit in the page list_item.php
+
+- [x] \(11/26/2021) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
+  -  List of Evidence of Feature Completion
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/product_info.php?id=3
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/86
+    - Screenshots
+      - ![Screen Shot 2021-11-29 at 12 25 04 PM](https://user-images.githubusercontent.com/89932323/143914412-644b94cb-d334-4068-a9cb-d8b1ff1f8cc9.png)
+        - When I click more info it will open a new page with more info of the product 
         
-- [ ] \(mm/dd/yyyy of completion)User must be logged in for any Cart related activity below
+- [x] \(11/28/2021) User must be logged in for any Cart related activity below
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/shop.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/93
+      - https://github.com/massimochen22/IT202-001/pull/95
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 12 35 54 PM](https://user-images.githubusercontent.com/89932323/143915999-8c899488-5e07-4707-99f9-320c1538730c.png)
+        - From what we can see from the previous screenshot, when we are not logged in, the shopping cart is not visible, but when you are logged in you can see it in the nav bar.
 
- - [ ] \(mm/dd/yyyy of completion)User will be able to add items to Cart
+ - [x] \(11/28/2021)User will be able to add items to Cart
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/93
+      - https://github.com/massimochen22/IT202-001/pull/95
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-
-- [ ] \(mm/dd/yyyy of completion)User will be able to see their cart
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-
-- [ ] \(mm/dd/yyyy of completion) User will be able to change quantity of items in their cart
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 12 38 35 PM](https://user-images.githubusercontent.com/89932323/143916460-3f2f0e96-831a-4754-b84c-c897fb6f4aac.png)
+      - ![Screen Shot 2021-11-29 at 12 38 41 PM](https://user-images.githubusercontent.com/89932323/143916478-8f52dbf0-62e5-458f-9cd7-1918e33b3415.png)
+      - ![Screen Shot 2021-11-29 at 12 38 57 PM](https://user-images.githubusercontent.com/89932323/143916494-a7be39ad-9599-4479-ab59-cfb2c89e3c79.png)
+       - These three screenshots will show that my adding feature works, and it will add those items in my customer_cart table
 
 
-- [ ] \(mm/dd/yyyy of completion)User will be able to remove a single item from their cart vai button click
+- [x] \(11/28/2021)User will be able to see their cart
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/93
+      - https://github.com/massimochen22/IT202-001/pull/95
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+        - Refer to the previous screenshot. It shows that user can access and see their cart. It list items, subtotal, total cart value
+        - ![Screen Shot 2021-11-29 at 12 47 25 PM](https://user-images.githubusercontent.com/89932323/143917556-ba2ba5a3-1b6d-4861-aced-1d66dac89d6a.png)
+          -  From this screenshot you can see the detail page after the user click more info in the shopping cart
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to clear their entire cart via a button click
+
+- [x] \(11/28/2021) User will be able to change quantity of items in their cart
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+     - https://github.com/massimochen22/IT202-001/pull/93
+     - https://github.com/massimochen22/IT202-001/pull/95
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-11-29 at 12 48 47 PM](https://user-images.githubusercontent.com/89932323/143917764-40f3b48f-1ac0-4bba-88b2-552450f0bb3a.png)
+        - In this step I changed the quantity to 1 and all the values update themselves
+      - ![Screen Shot 2021-11-29 at 12 56 16 PM](https://user-images.githubusercontent.com/89932323/143918824-9a7165f3-89df-4e5b-a628-53c0bff6b71b.png)
+      - ![Screen Shot 2021-11-29 at 12 56 20 PM](https://user-images.githubusercontent.com/89932323/143918869-15a3570b-ccc0-485f-875b-9e8e7a2c1825.png)
+        -  Here I have before and after setting the quantity to 0. It will remove the item from the cart. 
+
+
+- [x] \(11/28/2021)User will be able to remove a single item from their cart vai button click
+  -  List of Evidence of Feature Completion
+    - Status:Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/93
+      - https://github.com/massimochen22/IT202-001/pull/95
+    - Screenshots
+      - ![Screen Shot 2021-11-29 at 12 54 04 PM](https://user-images.githubusercontent.com/89932323/143918594-7f010270-090a-4235-a3be-1f464ede3f39.png)
+      - ![Screen Shot 2021-11-29 at 12 54 08 PM](https://user-images.githubusercontent.com/89932323/143918608-4ba1149f-d5b0-45cd-a675-5a15567062f6.png)
+        - Here I try to show before and after removing one single item with the remove button
+
+- [x] \(11/28/2021) User will be able to clear their entire cart via a button click
+  -  List of Evidence of Feature Completion
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/93
+      - https://github.com/massimochen22/IT202-001/pull/95
+    - Screenshots
+      - ![Screen Shot 2021-11-29 at 1 06 48 PM](https://user-images.githubusercontent.com/89932323/143920147-94cdb5ec-1b81-45ee-ac1d-514cd0dfeeac.png)
+      - ![Screen Shot 2021-11-29 at 1 06 51 PM](https://user-images.githubusercontent.com/89932323/143920155-d8dc05c7-8b60-4f0d-8ba1-7b0c631adb70.png)
+        - The two screenshots are showing before and after clicking clear cart
                
 - Milestone 3
-- [ ] \(mm/dd/yyyy of completion) User will be able to purchase items in their Cart
+- [x] \(12/07/2021) User will be able to purchase items in their Cart
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/cart.php
+    -  Direct Link: https://hc424-prod.herokuapp.com/Project/OrderConfirmation.php?Checkout=Check+Out
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/109
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-08 at 6 23 22 PM](https://user-images.githubusercontent.com/89932323/145307276-008e6073-4ef7-4fcf-bc6f-4942a45e7252.png)
+        - From this picture you can see the checkout button in your cart page
+      -  ![Screen Shot 2021-12-08 at 6 23 28 PM](https://user-images.githubusercontent.com/89932323/145307340-0902ecea-88c6-4f7a-9ba4-805e545334c1.png)
+         -  From this screenshot we can see that the confirmation page has the form where users can input their information, and also the payment methods are listed there.
+      -  ![Screen Shot 2021-12-08 at 6 23 58 PM](https://user-images.githubusercontent.com/89932323/145307487-cd34f0b2-8d91-4e97-8f79-d676a9d92f7c.png)
+          - With this screenshot I show that in order to submit the form, the user has to write the correct total $
+      - ![Screen Shot 2021-12-08 at 6 40 17 PM](https://user-images.githubusercontent.com/89932323/145308511-98ee9196-354e-426e-98b5-708ae09bc27a.png)
+          - With this screenshot, you can see that when I checkout a larger amount of quantity than the total stock, I will be redirected to the cart page asking me to update the quantity.
+      - ![Screen Shot 2021-12-08 at 6 42 08 PM](https://user-images.githubusercontent.com/89932323/145308787-ff3c7198-bf4f-4757-8a28-c0e2d1b95e17.png)
+       ![Screen Shot 2021-12-08 at 6 42 45 PM](https://user-images.githubusercontent.com/89932323/145308796-6779998b-5608-437e-8fa8-884f83de27c7.png)
+       ![Screen Shot 2021-12-08 at 6 43 07 PM](https://user-images.githubusercontent.com/89932323/145308821-9bb16ac5-0d6b-4a2f-bdcc-111108768cd2.png)
+           -  With these three screenshots I show that my product table updates once I checkout the item.
 
-- [ ] \(mm/dd/yyyy of completion) Order Confirmation Page
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to see their Purchase History
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History
+
+
+
+- [x] \(12/07/2021) Order Confirmation Page
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/confirmationPage.php
+      - https://github.com/massimochen22/IT202-001/pull/111
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-08 at 6 47 19 PM](https://user-images.githubusercontent.com/89932323/145309148-ec6d667d-d78c-4134-a9c8-21eeca6bed89.png)
+        - This screenshot shows the thank you message and the details for my order.
+
+- [x] \(12/07/2021) User will be able to see their Purchase History
+  -  List of Evidence of Feature Completion
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/history.php
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/order_info.php?id=57
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/112
+    - Screenshots
+      - ![Screen Shot 2021-12-08 at 6 48 32 PM](https://user-images.githubusercontent.com/89932323/145309415-a75a3fa4-8584-4b39-8606-0bfed651166f.png)
+        - I show that the user can see the what he/she purchased
+      - ![Screen Shot 2021-12-08 at 6 51 26 PM](https://user-images.githubusercontent.com/89932323/145309812-151e69c1-3507-4d54-9297-af13dffb5ccb.png)
+        - when you click the order number it will bring you to a order info page with all the details about the order
+
+- [x] \(12/07/2021) Store Owner will be able to see all Purchase History
+  -  List of Evidence of Feature Completion
+    - Status:Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/transactions.php
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/order_info.php?id=56
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/113
+      - https://github.com/massimochen22/IT202-001/pull/117
+    - Screenshots
+      - ![Screen Shot 2021-12-08 at 6 57 55 PM](https://user-images.githubusercontent.com/89932323/145310109-3c3dfeb8-f187-4747-ada8-5ea14b68ff54.png)
+        - This is the page of all orders that only admins or store owner can see. 
+      - ![Screen Shot 2021-12-08 at 6 51 26 PM](https://user-images.githubusercontent.com/89932323/145310181-007eab23-d59b-41b4-9645-cbf9f5e17e8d.png)
+        - This is the detail page that you can access by clicking the order number. 
 - Milestone 4
 - [ ] \(mm/dd/yyyy of completion)User can set their profile to be public or private (will need another column in Users table) 
   -  List of Evidence of Feature Completion
