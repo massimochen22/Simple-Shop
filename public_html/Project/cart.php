@@ -96,13 +96,13 @@ try {
 //     flash("<pre>" . var_export($e, true) . "</pre>");
 //     }
 ?>
-<div class="container-fluid">
+<div >
     <h1>Shopping Cart</h1>
     <?php if (count($results) == 0) : ?>
         <p>No results to show</p>
     <?php else : ?>
         <?php $total = 0;?>
-        <table class="table text-light">
+        <table >
             <?php foreach ($results as $index => $record) : ?>
                 <?php if ($index == 0) : ?>
                     <thead>
@@ -131,7 +131,7 @@ try {
                     <td>
                         <form method="POST" id = "updateQuantity" class="row row-cols-lg-auto g-3 align-items-center">
                         <input type="number" id="quantity" name="quantity" min="0" max="10000" required="required">
-                        <input class="btn btn-primary" type="submit" name = "update" id = "update" value= "UPDATE" />
+                        <input  type="submit" name = "update" id = "update" value= "UPDATE" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($record, "item_id");?>>
                         </form>
                         
@@ -140,7 +140,7 @@ try {
 
                     <td>
                         <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-                        <input class="btn btn-primary" type="submit" name = "remove" id="remove" value= "remove" />
+                        <input type="submit" name = "remove" id="remove" value= "remove" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($record, "item_id");?>>
                         </form>
                     </td>
@@ -155,10 +155,10 @@ try {
         <br>
         <div>
             <form action="OrderConfirmation.php">        
-                <input class="btn btn-primary" name="Checkout" type="submit" value= "Check Out"/>
+                <input name="Checkout" type="submit" value= "Check Out"/>
             </form>
             <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-                <input class="btn btn-primary" name="clear" type="submit" value= "Clear Cart"/>
+                <input  name="clear" type="submit" value= "Clear Cart"/>
             </form>
         </div>
         <br>

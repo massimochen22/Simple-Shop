@@ -36,7 +36,7 @@ try {
 
 ?>
 
-<div class="container-fluid">
+<div >
     <h1>Thank You!</h1>
     <hr>
     </form>
@@ -49,7 +49,7 @@ try {
         </div>
         
         <br>
-        <table class="table text-light">
+        <table>
             <?php foreach ($results as $index => $record) : ?>
                 <?php if ($index == 0) : ?>
                     <thead>
@@ -73,7 +73,7 @@ try {
         </div>
         <div id="submit">
             <form action="Home.php">        
-                    <input class="btn btn-primary" name="Home" type="submit" value= "Back to Home"/>
+                    <input  name="Home" type="submit" value= "Back to Home"/>
             </form>
         </div>
         

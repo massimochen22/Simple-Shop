@@ -10,7 +10,7 @@ $results = [];
 $totPrice;
 
 $db = getDB();
-$stmt = $db->prepare("SELECT p.name, o.item_id, o.quantity, o.user_id, o.unit_price from OrderItems o JOIN Products p ON p.id = o.item_id WHERE order_id = :order_id");
+$stmt = $db->prepare("SELECT p.name, o.item_id, p.category, o.quantity, o.user_id, o.unit_price from OrderItems o JOIN Products p ON p.id = o.item_id WHERE order_id = :order_id");
 try {
     $stmt->execute([":order_id"=> $id]);
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@ try {
 }
 
 ?>
-<div class="container-fluid">
+<div >
     </form>
     <?php if (count($results) == 0) : ?>
         <p>No results to show</p>
@@ -45,7 +45,7 @@ try {
         </div>
         
         <br>
-        <table class="table text-light">
+        <table >
             <?php foreach ($results as $index => $record) : ?>
                 <?php if ($index == 0) : ?>
                     <thead>
@@ -70,7 +70,7 @@ try {
         <br>
         <div id="submit">
             <form action="history.php">        
-                    <input class="btn btn-primary" name="Home" type="submit" value= "Go Back"/>
+                    <input  name="Home" type="submit" value= "Go Back"/>
             </form>
         </div>
         
