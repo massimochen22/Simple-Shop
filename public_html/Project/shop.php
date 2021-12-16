@@ -7,13 +7,12 @@ $db = getDB();
 $order = se($_GET, "order", "", false);
 $categ = se($_GET, "categ", "", false);
 
-
 if (isset($_GET["itemName"]) && isset($_GET["order"])&& isset($_GET["categ"])) {
     $params =[];
     $db = getDB();
     $name = se($_GET, "itemName", "", false);
     $name = "%$name%";
-    $query = "SELECT id, name, description, unit_price, category, stock from Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order LIMIT :offset,:count"; 
+    $query = "SELECT id, name, description, unit_price, category, stock, rating from Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order LIMIT :offset,:count"; 
     $total_query = "SELECT count(1) as total FROM Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order ";
     $params[":name"] = $name;
     $params[":categ"] = $categ;
@@ -41,7 +40,7 @@ if (isset($_GET["itemName"]) && isset($_GET["order"])&& isset($_GET["categ"])) {
 else{
     $params =[];
     $db = getDB();
-    $query = "SELECT id, name, description, unit_price, category, stock FROM Products WHERE stock > 0 and visibility = 1 LIMIT :offset,:count";
+    $query = "SELECT id, name, description, unit_price, category, stock, rating FROM Products WHERE stock > 0 and visibility = 1 LIMIT :offset,:count";
     $total_query = "SELECT count(1) as total FROM Products WHERE stock > 0 AND visibility = 1 ";
     paginate($total_query,$params,10);
     $params[":offset"] = $offset;
@@ -64,7 +63,6 @@ else{
         flash("<pre>" . var_export($e, true) . "</pre>");
     }
 }
-
 $db = getDB();
 $qr = $db->prepare("SELECT DISTINCT category FROM Products WHERE stock > 0 and visibility = 1");
 try {
@@ -76,7 +74,6 @@ try {
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
-
 $quantity = (int) se($_POST, "quantity", "", false);
 if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantity!=NULL){
     $item_id = se($_POST, "itid", "",false);
@@ -120,7 +117,6 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
     }
 }
 ?>
-
 <div >
     <h1>List Items</h1>
     <form  >
@@ -145,12 +141,20 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
             <?php foreach ($results as $item) : ?>
                 <div class="col">
                 <div >
-
-                    
                     <div class="card-footer">
                     <div class="card-body">
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                     </div>
+                        Average Rating: 
+                        <?php 
+                        if (!empty(se($item, "rating","",false))){
+                            se($item, "rating");
+                        }
+                        else{
+                            echo "N/A";
+                        }
+                        
+                        ?><br>
                         Category: <?php se($item, "category"); ?> <br>
                         Cost: <?php se($item, "unit_price"); ?>$
                         <?php if (is_logged_in()):?>
