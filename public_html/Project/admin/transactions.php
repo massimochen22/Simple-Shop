@@ -153,7 +153,7 @@ try {
                     <?php foreach ($record as $column => $value) : ?>
                         <td>
                             <?php if ($column == "id"): ?>
-                                    <a href="order_info.php?id=<?php se($value, null, "N/A"); ?>"> <?php echo se($value, null, "", false);?></a>
+                                    <a href="/Project/order_info.php?id=<?php se($value, null, "N/A"); ?>"> <?php echo se($value, null, "", false);?></a>
                             <?php else: 
                                 echo se($value, null, "", false); 
                             ?>
