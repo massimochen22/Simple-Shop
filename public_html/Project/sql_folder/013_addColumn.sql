@@ -1,0 +1,2 @@
+ALTER TABLE Products
+ADD COLUMN Rating FLOAT;

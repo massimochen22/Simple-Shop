@@ -47,6 +47,14 @@ try {
             $tot_ratings = $tot_ratings + $temp;
         }
         $avg = round(($tot_ratings/$count),3);
+        $db = getDB();
+        $stmt = $db->prepare("UPDATE Products SET rating = $avg WHERE id = :id ");
+        try {
+            $stmt->execute([":id"=> $id]);
+        }
+        catch (PDOException $e) {
+            flash("<pre>" . var_export($e, true) . "</pre>");
+        }
     }
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
