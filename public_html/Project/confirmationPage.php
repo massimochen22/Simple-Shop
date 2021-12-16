@@ -71,11 +71,7 @@ try {
         <div>
             Total: <?php echo $totPrice?>$
         </div>
-        <div id="submit">
-            <form action="Home.php">        
-                    <input  name="Home" type="submit" value= "Back to Home"/>
-            </form>
-        </div>
+        
         
     <?php endif; ?>
 </div>
