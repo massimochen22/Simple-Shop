@@ -18,11 +18,35 @@ try {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
 
+// $query = "SELECT rating FROM Ratings WHERE product_id = :id LIMIT :offset,:count ";
+// $total_query = "SELECT count(1) as total FROM Ratings WHERE product_id = :id";
+// $params[":id"] = $id;
+// paginate($total_query,$params,10);
+// $params[":offset"] = $offset;
+// $params[":count"] = 10;
+// $stmt = $db->prepare($query);
+// foreach ($params as $key => $value) {
+//     $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+//     $stmt->bindValue($key, $value, $type);
+// }
+// $params = null;
+
+$params = [];
 $db = getDB();
-$stmt = $db->prepare("SELECT * FROM Ratings join Users on Ratings.user_id = Users.id WHERE product_id = :id ORDER BY Ratings.created DESC LIMIT 10 ");
-// Products p join Customer_Cart o ON p.id = o.item_id
+$query = "SELECT * FROM Ratings join Users on Ratings.user_id = Users.id WHERE Ratings.product_id = :id ORDER BY Ratings.created DESC LIMIT :offset,:count ";
+$tot_query = "SELECT count(1) as total FROM Ratings join Users on Ratings.user_id = Users.id WHERE Ratings.product_id = :id ORDER BY Ratings.created DESC ";
+$params[":id"] = $id;
+paginate($tot_query,$params,10);
+$params[":offset"] = $offset;
+$params[":count"] = 10;
+$stmt = $db->prepare($query);
+foreach ($params as $key => $value) {
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+}
+    $params = null;
 try {
-    $stmt->execute([":id"=> $id]);
+    $stmt->execute($params);
     $r2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //echo "<pre>" . var_export($r, true) . "</pre>";
     if ($r2) {
@@ -175,6 +199,7 @@ if (isset($_POST["comment"])&& isset($_POST["rate"])){
             </p>
         <?php endforeach; ?>
         <div >
+        <?php include(__DIR__ . "/../../partials/pagination.php"); ?>
         </div>
 <?php else : ?>
     <p>No Reviews yet to show</p>
