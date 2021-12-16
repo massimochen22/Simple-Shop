@@ -43,35 +43,7 @@ if (isset($_GET["itemName"])) {
         flash("<pre>" . var_export($e, true) . "</pre>");
     }
 }
-else{
-    $params =[];
-    $db = getDB();
-    $query = "SELECT id, name, description, category, stock, unit_price from Products WHERE 1=1";
-    $tot_query = "SELECT count(1) as total FROM Products WHERE 1=1";
-    if($checkBox ){
-        $query .= " AND stock < 1 ";
-        $tot_query .= " AND stock < 1 ";
-    }
-    $query .= "LIMIT :offset,:count";
-    paginate($tot_query,$params,10);
-    $params[":offset"] = $offset;
-    $params[":count"] = 10;
-    $stmt = $db->prepare($query);
-    foreach ($params as $key => $value) {
-        $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
-        $stmt->bindValue($key, $value, $type);
-    }
-    $params = null;
-    try {
-        $stmt->execute();
-        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if ($r) {
-            $results = $r;
-        }
-    } catch (PDOException $e) {
-        flash("<pre>" . var_export($e, true) . "</pre>");
-    }
-}
+
 ?>
 <div >
     <h1>List Items</h1>
