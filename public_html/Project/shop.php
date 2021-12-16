@@ -94,10 +94,10 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
 }
 ?>
 
-<div class="container-fluid">
+<div >
     <h1>List Items</h1>
-    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="input-group mb-3">
+    <form method="POST" >
+        <div class="input-group ">
             <select name="order" value="<?php se($_POST, "order"); ?>">
                 <option value="asc">ascending</option>
                 <option value="desc">descending</option>
@@ -108,7 +108,7 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
                 <?php endforeach; ?>
             </select>
             <input class="form-control" type="search" name="itemName" placeholder="Item Name" />
-            <input class="btn btn-primary" type="submit" value="Search" />
+            <input  type="submit" value="Search" />
         </div>
     </form>
     <?php if (count($results) == 0) : ?>
@@ -117,15 +117,13 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
         <table class="table text-light">
             <?php foreach ($results as $item) : ?>
                 <div class="col">
-                <div class="card bg-dark">
-                    <?php if (se($item, "image", "", false)) : ?>
-                        <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
-                    <?php endif; ?>
+                <div >
 
+                    
+                    <div class="card-footer">
                     <div class="card-body">
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                     </div>
-                    <div class="card-footer">
                         Cost: <?php se($item, "unit_price"); ?>$
                         <?php if (is_logged_in()):?>
                             <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
@@ -140,10 +138,11 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
                             </form>
                         <?php endif; ?>
                         <!-- define quantity -->
-                    </div>
-                    <div>
+                        <div>
                     <a href="product_info.php?id=<?php se($item, "id"); ?>">More info</a>
                     </div>
+                    </div>
+                    
                 </div>
             </div>
             <?php endforeach; ?>

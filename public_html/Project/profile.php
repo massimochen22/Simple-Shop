@@ -148,7 +148,7 @@ try {
 
     <?php if ($isMe && $edit) : ?>
         <form method="POST" onsubmit="return validate(this);">
-            <div class="mb-3">
+            <div >
                 <div class="form-check form-switch">
                     <input name="visibility" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" <?php if ($public) echo "checked"; ?>>
                     <label class="form-check-label" for="flexSwitchCheckDefault">Make Profile Public</label>

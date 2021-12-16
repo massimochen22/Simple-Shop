@@ -22,18 +22,18 @@ if (isset($_POST["itemName"])) {
     }
 }
 ?>
-<div class="container-fluid">
+<div >
     <h1>List Items</h1>
-    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="input-group mb-3">
-            <input class="form-control" type="search" name="itemName" placeholder="Item Filter" />
-            <input class="btn btn-primary" type="submit" value="Search" />
+    <form method="POST" >
+        <div >
+            <input  type="search" name="itemName" placeholder="Item Filter" />
+            <input  type="submit" value="Search" />
         </div>
     </form>
     <?php if (count($results) == 0) : ?>
         <p>No results to show</p>
     <?php else : ?>
-        <table class="table text-light">
+        <table >
             <?php foreach ($results as $index => $record) : ?>
                 <?php if ($index == 0) : ?>
                     <thead>

@@ -42,19 +42,19 @@ function mapColumn($col)
     return "text";
 }
 ?>
-<div class="container-fluid">
+<div >
     <h1>Edit Item</h1>
     <form method="POST">
         <?php foreach ($result as $column => $value) : ?>
             <?php /* Lazily ignoring fields via hardcoded array*/ ?>
             <?php if (!in_array($column, $ignore)) : ?>
-                <div class="mb-4">
-                    <label class="form-label" for="<?php se($column); ?>"><?php se($column); ?></label>
-                    <input class="form-control" id="<?php se($column); ?>" type="<?php echo mapColumn($column); ?>" value="<?php se($value); ?>" name="<?php se($column); ?>" />
+                <div >
+                    <label  for="<?php se($column); ?>"><?php se($column); ?></label>
+                    <input id="<?php se($column); ?>" type="<?php echo mapColumn($column); ?>" value="<?php se($value); ?>" name="<?php se($column); ?>" />
                 </div>
             <?php endif; ?>
         <?php endforeach; ?>
-        <input class="btn btn-primary" type="submit" value="Update" name="submit" />
+        <input  type="submit" value="Update" name="submit" />
     </form>
 </div>
 
