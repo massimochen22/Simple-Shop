@@ -119,18 +119,18 @@ if (isset($_POST["comment"])&& isset($_POST["rate"])){
     <div class="col">
         <h2>Product Name: <?php se($item, "name"); ?></h2>
             <?php if (se($item, "image", "", false)) : ?>
-                <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
+                <img src="<?php se($item, "image"); ?>"  alt="...">
             <?php endif; ?>
-            <div class="card-footer">
+            <div >
                 Description: <?php se($item, "description"); ?>
             </div>
-            <div class="card-footer">
+            <div >
                 Cost: <?php se($item, "unit_price"); ?>
                 <?php if (is_logged_in()):?>
-                    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+                    <form method="POST" >
                         <label for="quantity">Quantity :</label>
                         <input type="number" id="quantity" name="quantity" min="0" max="<?php se($item, "stock"); ?>">
-                        <input class="btn btn-primary" name= "add" type="submit" value="Add to cart" />
+                        <input  name= "add" type="submit" value="Add to cart" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($item, "id");?>>
                         <input type="hidden" id="itprice" name="itprice" value= <?php se($item, "unit_price");?>>
                     </form>
@@ -139,12 +139,12 @@ if (isset($_POST["comment"])&& isset($_POST["rate"])){
             <hr>
             <div>
                 <h2>Rate this Product</h2>
-                <form method="POST" class="row row-cols-lg-auto g-3 align-items-center" >
+                <form method="POST"  >
                     <label for="rate">Rating :</label>
                     <input type="number" id="rate" name="rate" min="1" max= "5" required="required"><br>
                     Comment:<br>
                     <textarea name="comment" required></textarea><br>
-                    <input class="btn btn-primary" name= "enter" type="submit" value="Submit" />
+                    <input name= "enter" type="submit" value="Submit" />
                     <input type="hidden" id="itid" name="itid" value= <?php se($item, "id");?>>
                 </form>
             </div>
@@ -153,12 +153,12 @@ if (isset($_POST["comment"])&& isset($_POST["rate"])){
 <hr>
 <h2>Users Ratings</h2>
 <?php if ($results2) : ?>
-    <div class="card-footer">
+    <div >
         Average Rating: <b><u><?php echo($avg); ?></u></b>
     </div>
         <?php foreach ($results2 as $item2) : ?>
             <?php $curr_rating = (float) se($item2, "rating", "",false); ?>
-            <p class="card-footer">
+            <p >
                 Rated: <?php echo($curr_rating); ?> /5 | Wrote: " <?php se($item2, "comment"); ?>" | Date Posted :  <?php se($item2, "created"); ?> <br> by the user: 
                 <?php $user_id = se($item2, "user_id", 0, false);
                 $username = se($item2, "username", "", false);
@@ -166,7 +166,7 @@ if (isset($_POST["comment"])&& isset($_POST["rate"])){
                 <br>
             </p>
         <?php endforeach; ?>
-        <div class="card-footer">
+        <div >
         </div>
 <?php else : ?>
     <p>No Reviews yet to show</p>

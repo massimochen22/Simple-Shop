@@ -115,7 +115,7 @@ window.onbeforeunload = function(){
 </script>
 
 
-<div class="container-fluid">
+<div >
 <style>
 h1 {text-align: center;}
 #submit{text-align: center}
@@ -128,7 +128,7 @@ h1 {text-align: center;}
         <hr>
         <h2>Order Summary</h2>
 
-        <table class="table text-light">
+        <table >
             <?php foreach ($results as $index => $record) : ?>
                 <?php if ($index == 0) : ?>
                     <thead>
@@ -159,7 +159,7 @@ h1 {text-align: center;}
     
         <hr>
     </div>
-    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+    <form method="POST" >
         <div class="row">
             <div class="col-50">
                 <h2>Shipping Address</h2>
@@ -195,11 +195,11 @@ h1 {text-align: center;}
         </div>
         <div>
             <label for="totCost">Input the total cost for confirmation purpose:</label>
-            <input class="form-control" id = "totCost" type="text" name="value" placeholder="Total Cost" required="required" pattern="<?php echo $total?>" title="The value has to match the total cost"/>$
+            <input  id = "totCost" type="text" name="value" placeholder="Total Cost" required="required" pattern="<?php echo $total?>" title="The value has to match the total cost"/>$
         </div>
         <div id="submit">
             <br>
-            <input class="btn btn-primary" type="submit" name = "checkout" value="Check Out" />
+            <input  type="submit" name = "checkout" value="Check Out" />
         </div>
         
     </form>
