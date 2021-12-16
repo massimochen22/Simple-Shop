@@ -4,16 +4,30 @@ require(__DIR__ . "/../../partials/nav.php");
 $results = [];
 
 $db = getDB();
-$order = se($_POST, "order", "", false);
-$categ = se($_POST, "categ", "", false);
+$order = se($_GET, "order", "", false);
+$categ = se($_GET, "categ", "", false);
 
 
-if (isset($_POST["itemName"]) && isset($_POST["order"])&& isset($_POST["categ"])) {
+if (isset($_GET["itemName"]) && isset($_GET["order"])&& isset($_GET["categ"])) {
+    $params =[];
     $db = getDB();
-    $stmt = $db->prepare("SELECT id, name, description, unit_price, category, stock from Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = '" .$categ. "' ORDER BY unit_price " .$order);
-
+    $name = se($_GET, "itemName", "", false);
+    $name = "%$name%";
+    $query = "SELECT id, name, description, unit_price, category, stock from Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order LIMIT :offset,:count"; 
+    $total_query = "SELECT count(1) as total FROM Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order ";
+    $params[":name"] = $name;
+    $params[":categ"] = $categ;
+    paginate($total_query,$params,10);
+    $params[":offset"] = $offset;
+    $params[":count"] = 10;
+    $stmt = $db->prepare($query);
+    foreach ($params as $key => $value) {
+        $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+        $stmt->bindValue($key, $value, $type);
+    }
+    $params = null; //set it to null to avoid issues
     try {
-        $stmt->execute([":name" => "%" . $_POST["itemName"] . "%"]);
+        $stmt->execute($params);
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($r) {
             $results = $r;
@@ -25,10 +39,23 @@ if (isset($_POST["itemName"]) && isset($_POST["order"])&& isset($_POST["categ"])
 
 
 else{
+    $params =[];
     $db = getDB();
-    $stmt = $db->prepare("SELECT id, name, description, unit_price, category, stock FROM Products WHERE stock > 0 and visibility = 1 LIMIT 10");
+    $query = "SELECT id, name, description, unit_price, category, stock FROM Products WHERE stock > 0 and visibility = 1 LIMIT :offset,:count";
+    $total_query = "SELECT count(1) as total FROM Products WHERE stock > 0 AND visibility = 1 ";
+    paginate($total_query,$params,10);
+    $params[":offset"] = $offset;
+    $params[":count"] = 10;
+    // $query .= " LIMIT :offset, :count";
+    // $total_query .= " LIMIT :offset, :count";
+    $stmt = $db->prepare($query);
+    foreach ($params as $key => $value) {
+        $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+        $stmt->bindValue($key, $value, $type);
+    }
+    $params = null; //set it to null to avoid issues
     try {
-        $stmt->execute();
+        $stmt->execute($params);
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($r) {
             $results = $r;
@@ -96,7 +123,7 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
 
 <div >
     <h1>List Items</h1>
-    <form method="POST" >
+    <form  >
         <div class="input-group ">
             <select name="order" value="<?php se($_POST, "order"); ?>">
                 <option value="asc">ascending</option>
@@ -124,6 +151,7 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
                     <div class="card-body">
                         <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                     </div>
+                        Category: <?php se($item, "category"); ?> <br>
                         Cost: <?php se($item, "unit_price"); ?>$
                         <?php if (is_logged_in()):?>
                             <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
@@ -148,6 +176,7 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
             <?php endforeach; ?>
         </table>
     <?php endif; ?>
+    <?php include(__DIR__ . "/../../partials/pagination.php"); ?>
 </div>
 
 <?php

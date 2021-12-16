@@ -129,7 +129,7 @@ try {
                         ?>
                     </td>
                     <td>
-                        <form method="POST" id = "updateQuantity" class="row row-cols-lg-auto g-3 align-items-center">
+                        <form method="POST" id = "updateQuantity" >
                         <input type="number" id="quantity" name="quantity" min="0" max="10000" required="required">
                         <input  type="submit" name = "update" id = "update" value= "UPDATE" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($record, "item_id");?>>
@@ -139,7 +139,7 @@ try {
 
 
                     <td>
-                        <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+                        <form method="POST" >
                         <input type="submit" name = "remove" id="remove" value= "remove" />
                         <input type="hidden" id="itid" name="itid" value= <?php se($record, "item_id");?>>
                         </form>
@@ -157,7 +157,7 @@ try {
             <form action="OrderConfirmation.php">        
                 <input name="Checkout" type="submit" value= "Check Out"/>
             </form>
-            <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+            <form method="POST" >
                 <input  name="clear" type="submit" value= "Clear Cart"/>
             </form>
         </div>
