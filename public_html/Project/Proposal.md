@@ -355,6 +355,8 @@
     - Direct Link: https://hc424-prod.herokuapp.com/Project/product_info.php?id=5
     - Pull Requests
       - Direct Link: https://github.com/massimochen22/IT202-001/pull/124
+      - Direct Link: https://github.com/massimochen22/IT202-001/pull/149
+        - I previously didn't have pagination for the ratings, with pull request 149 I do now.
     - Screenshots
       - ![Screen Shot 2021-12-17 at 1 48 04 PM](https://user-images.githubusercontent.com/89932323/146593547-98ebc12d-d158-4841-9341-b737c7f71be6.png) 
         - Here I show that users can review the product
