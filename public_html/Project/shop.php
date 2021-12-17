@@ -7,13 +7,14 @@ $db = getDB();
 $order = se($_GET, "order", "", false);
 $categ = se($_GET, "categ", "", false);
 
-if (isset($_GET["itemName"]) && isset($_GET["order"])&& isset($_GET["categ"])) {
+if (isset($_GET["itemName"]) && isset($_GET["order"])&& isset($_GET["categ"])&& isset($_GET["sort"])) {
     $params =[];
     $db = getDB();
+    $sort = se($_GET, "sort", "", false);
     $name = se($_GET, "itemName", "", false);
     $name = "%$name%";
-    $query = "SELECT id, name, description, unit_price, category, stock, rating from Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order LIMIT :offset,:count"; 
-    $total_query = "SELECT count(1) as total FROM Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY unit_price $order ";
+    $query = "SELECT id, name, description, unit_price, category, stock, rating from Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY $sort $order LIMIT :offset,:count"; 
+    $total_query = "SELECT count(1) as total FROM Products WHERE stock > 0 AND visibility = 1 AND name like :name AND category = :categ ORDER BY $sort  $order ";
     $params[":name"] = $name;
     $params[":categ"] = $categ;
     paginate($total_query,$params,10);
@@ -121,7 +122,11 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
     <h1>List Items</h1>
     <form  >
         <div class="input-group ">
-            <select name="order" value="<?php se($_POST, "order"); ?>">
+            <select name="sort" value="<?php se($_GET, "sort"); ?>">
+                <option value="unit_price">Cost</option>
+                <option value="Rating">Rating</option>
+            </select>
+            <select name="order" value="<?php se($_GET, "order"); ?>">
                 <option value="asc">ascending</option>
                 <option value="desc">descending</option>
             </select>
@@ -153,7 +158,7 @@ if (isset($_POST["quantity"])&& isset($_POST["add"]) && $quantity!=0 && $quantit
                         else{
                             echo "N/A";
                         }
-                        
+
                         ?><br>
                         Category: <?php se($item, "category"); ?> <br>
                         Cost: <?php se($item, "unit_price"); ?>$
