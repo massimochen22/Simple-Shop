@@ -3,7 +3,7 @@
 ## Github Link: https://github.com/massimochen22/IT202-001/tree/prod/public_html/Project/
 ## Project Board Link: https://github.com/massimochen22/IT202-001/projects/1
 ## Website Link: http://hc424-prod.herokuapp.com/Project/
-## Demo Link: https://youtube.com/playlist?list=PL-16BBo4D0BBLB7Utt5y6MNY_ZS3gxMo_ (This link is a my YouTube playlist of 4 videos explaining each milestone feature)
+## Demo Link: https://youtube.com/playlist?list=PL-16BBo4D0BBLB7Utt5y6MNY_ZS3gxMo_  (This link is a my YouTube playlist of 4 videos explaining each milestone feature. Please don't directly click the link, but copy and paste it. The last character of the link is an underscore)
 ## Your Name: Hao Massimo Chen
 
 <!--
