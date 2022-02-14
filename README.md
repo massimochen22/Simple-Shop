@@ -1,4 +1,4 @@
-### The simple shop files are in the public_html file. Here below is the description of the web application. 
+### The simple shop files are in the public_html/Project folder. Here below is the description of the web application. 
 ------------------------------------------------------------------------------------------------------------------------
 # Project Name: Simple Shop
 ## Project Summary: This project will create a simple e-commerce site for users. 
