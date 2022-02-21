@@ -5,6 +5,7 @@
 ## Github Link: https://github.com/massimochen22/IT202-001/tree/prod/public_html/Project/
 ## Project Board Link: https://github.com/massimochen22/IT202-001/projects/1
 ## Website Link: http://hc424-prod.herokuapp.com/Project/
+## Demo Link: https://youtube.com/playlist?list=PL-16BBo4D0BBLB7Utt5y6MNY_ZS3gxMo_  (This link is a my YouTube playlist of 4 videos explaining each milestone feature. Please don't directly click the link, but copy and paste it. The last character of the link is an underscore)
 ## Your Name: Hao Massimo Chen
 
 <!--
@@ -336,75 +337,88 @@
       - ![Screen Shot 2021-12-08 at 6 51 26 PM](https://user-images.githubusercontent.com/89932323/145310181-007eab23-d59b-41b4-9645-cbf9f5e17e8d.png)
         - This is the detail page that you can access by clicking the order number. 
 - Milestone 4
-- [ ] \(mm/dd/yyyy of completion)User can set their profile to be public or private (will need another column in Users table) 
+- [x] 12/15/2021 User can set their profile to be public or private (will need another column in Users table) 
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/profile.php?id=12
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - Direct Link: https://github.com/massimochen22/IT202-001/pull/121
+      - Direct Link: https://github.com/massimochen22/IT202-001/pull/124
+        -  In this pull request I updated the requirements for accessibility public and private...In the previous pull request I didn't really understand the requirement because I was absent that day
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-17 at 1 47 53 PM](https://user-images.githubusercontent.com/89932323/146593371-67577b8e-aed2-4101-b6ed-0f9b8e01913c.png) ![Screen Shot 2021-12-17 at 1 49 21 PM](https://user-images.githubusercontent.com/89932323/146593482-98bcc3fe-24ec-43fb-ae74-6172cb54bf4e.png)
+        - Here I show that I can edit my profile and I can put public or private
+      - ![Screen Shot 2021-12-17 at 1 48 04 PM](https://user-images.githubusercontent.com/89932323/146593547-98ebc12d-d158-4841-9341-b737c7f71be6.png) 
+        -  Here I show that each username is linked to their profile. If it is private it won't show the infos.
 
-- [ ] \(mm/dd/yyyy of completion)User will be able to rate a product they purchased
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
 
-- [ ] \(mm/dd/yyyy of completion)User’s Purchase History Changes
+- [x] \(12/15/2021)User will be able to rate a product they purchased
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/product_info.php?id=5
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - Direct Link: https://github.com/massimochen22/IT202-001/pull/124
+      - Direct Link: https://github.com/massimochen22/IT202-001/pull/149
+        - I previously didn't have pagination for the ratings, with pull request 149 I do now.
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-17 at 1 48 04 PM](https://user-images.githubusercontent.com/89932323/146593547-98ebc12d-d158-4841-9341-b737c7f71be6.png) 
+        - Here I show that users can review the product
+      - ![Screen Shot 2021-12-17 at 1 55 02 PM](https://user-images.githubusercontent.com/89932323/146594111-b4ad7dec-29e2-4951-a482-39eed63370f2.png)
+        - Here I show that you can post a review for the product
+      - ![Screen Shot 2021-12-17 at 1 54 21 PM](https://user-images.githubusercontent.com/89932323/146594159-524cddc7-66ff-43f6-be64-1355a41e7318.png)
+        - This is the data in my table for the ratings
 
-- [ ] \(mm/dd/yyyy of completion)Store Owner Purchase History Changes
+- [x] 12/15/2021 User’s Purchase History Changes
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed 
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/history.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/126
+    - Comment: The edits for the Milestone 4 feature are mainly in history.php, but I also added the file pagination.php and in the functions paginate(). Other files are just handling bootstrap styles
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-17 at 2 01 22 PM](https://user-images.githubusercontent.com/89932323/146594878-014ed088-180e-4db7-a563-ea9e281e63b4.png)
+        - Here I show my purchase history with all the filters and pagination
 
-- [ ] \(mm/dd/yyyy of completion)Add pagination to Shop Page
+- [x] 12/15/2021 Store Owner Purchase History Changes
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/transactions.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/129
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-17 at 2 04 20 PM](https://user-images.githubusercontent.com/89932323/146595197-a71dcb99-c988-4f45-9f93-6168b60f1c7d.png)
+        - Here I show that owner can see all the transactions, and also have filter and pagination
 
-- [ ] \(mm/dd/yyyy of completion)Store Owner will be able to see all products out of stock
+- [x] 12/16/2021 Add pagination to Shop Page
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status:Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/shop.php
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/133
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-17 at 2 07 49 PM](https://user-images.githubusercontent.com/89932323/146595594-9c3458a2-ff16-4a42-ab32-3f0ab9aaae24.png)
+        - Here I show that I have pagination in my shop page
 
-- [ ] \(mm/dd/yyyy of completion)User can sort products by average rating on the Shop Page
+- [x] 12/16/2021 Store Owner will be able to see all products out of stock
   -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/admin/list_item.php?itemName=
     - Pull Requests
-      - PR link #1 (repeat as necessary)
+      - https://github.com/massimochen22/IT202-001/pull/140
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+      - ![Screen Shot 2021-12-17 at 2 10 38 PM](https://user-images.githubusercontent.com/89932323/146595927-c58ee5f9-d5cf-4b66-a0be-74202e7cb4ef.png)
+        - Here the owner can use the out of stock filter. I also added pagination
+
+- [x] 12/17/2021 User can sort products by average rating on the Shop Page
+  -  List of Evidence of Feature Completion
+    - Status: Completed
+    - Direct Link: https://hc424-prod.herokuapp.com/Project/shop.php
+    - Pull Requests
+      - https://github.com/massimochen22/IT202-001/pull/146
+      - https://github.com/massimochen22/IT202-001/pull/152
+    - Screenshots
+      - ![Screen Shot 2021-12-17 at 2 31 54 PM](https://user-images.githubusercontent.com/89932323/146598129-bdd63883-ddcb-4325-b537-ca392c1a822c.png)
+        - Here I show that my shop page now can be filtered either by cost or avg rating and it also shows the avg rating in each product section
 ### Intructions
 #### Don't delete this
 1. Pick one project type
@@ -439,4 +453,3 @@
   8. Merge the updated dev branch into your production branch via a pull request
   9. Close any related issues that didn't auto close
     - You can edit the dropdown on the issue or drag/drop it to the proper column on the project board
-
